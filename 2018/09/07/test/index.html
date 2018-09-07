@@ -11,7 +11,7 @@
 
     <title>
         
-        undefined
+        for循环中i++和++i的区别 - undefined
         
     </title>
 
@@ -59,7 +59,7 @@
                     <span>主页</span>
                 </a>
             </li>
-            <li  class=active >
+            <li >
                 <a href="/tags">
                     <i class="iconfont icon-biaoqian1"></i>
                     <span>标签</span>
@@ -88,6 +88,10 @@
         </ul>
     </div>
     
+        <div id="toc" class="toc-article">
+    
+</div>
+    
 </div>
 
 
@@ -113,80 +117,96 @@
         
 
 
-<!-- 归档列表 -->
+<div class="post-container">
+    <div class="post-title">
+        for循环中i++和++i的区别
+    </div>
 
-<div class="archives-container">
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2018-09-07 15:52:57</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#js" title="js">js</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#html" title="html">html</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <p>hello world!</p>
+    <p>(当然要打开控制台)</p>
+    <p>---------------------------------------</p>
+    <p>在for中第三个元素中使用时效果————完全一样~</p>
+    <p>i++和++i在独立使用时效果是完全一样的</p>
+  </div>
+  <script>
 
-<div class="one-tag-list">
-                <span class="fa fa-calendar-times-o listing-seperator" id="2018">
-                    <span class="tag-text">2018</span>
-                </span>
-    <ul>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>09-07</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2018/09/07/test/">
-                        <span>
-                            for循环中i++和++i的区别
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>09-07</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2018/09/07/python爬虫的简单实现/">
-                        <span>
-                            python爬虫的简单实现
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>09-06</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2018/09/06/第一篇博客/">
-                        <span>
-                            第一篇博客
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>09-06</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2018/09/06/hello-world/">
-                        <span>
-                            Hello World
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
+  var ll=new Array(10);
+  ll[0]=1
+  ll[1]=2
+  ll[2]=3
+  ll[3]=4
+  ll[4]=5
+  ll[5]=6
+  length = 6;
 
-    </ul>
+  function insert(l){
+    var p,i,i2;
+    p = 2;
+    for(i = length-1; i>=p; --i){
+      l[i+1]=l[i];
+      console.log("i is :",i);
+    }
+    for(i2 = length-1; i2>=p; i2--){
+      l[i2+1]=l[i2];
+      console.log("i2 is :",i2);
+    }
+    l[p]=9;
+    length = length +1;
+    console.log("length is :",length);
+    console.log("l is :",l);
+  }
+
+  insert(ll);
+  </script>
+</body>
+</html>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">/*</div><div class="line">var ll=new Array(10);</div><div class="line">ll[0]=1</div><div class="line">ll[1]=2</div><div class="line">ll[2]=3</div><div class="line">ll[3]=4</div><div class="line">ll[4]=5</div><div class="line">ll[5]=6</div><div class="line">length = 6;</div><div class="line"></div><div class="line">function insert(l)&#123;</div><div class="line">  var p,i,i2;</div><div class="line">  p = 2;</div><div class="line">  for(i = length-1; i&gt;=p; --i)&#123;</div><div class="line">    l[i+1]=l[i];</div><div class="line">    console.log(&quot;i is :&quot;,i);</div><div class="line">  &#125;</div><div class="line">  for(i2 = length-1; i2&gt;=p; i2--)&#123;</div><div class="line">    l[i2+1]=l[i2];</div><div class="line">    console.log(&quot;i2 is :&quot;,i2);</div><div class="line">  &#125;</div><div class="line">  l[p]=9;</div><div class="line">  length = length +1;</div><div class="line">  console.log(&quot;length is :&quot;,length);</div><div class="line">  console.log(&quot;l is :&quot;,l);</div><div class="line">&#125;</div><div class="line"></div><div class="line">insert(ll);</div><div class="line">*/</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="/img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
 </div>
-
+        
+        <div id="comment-container">
+        </div>
+    </div>
 </div>
     </div>
 </div>
@@ -272,10 +292,24 @@
     // We expose some of the variables needed by the front end
     window.hexo_search_path = "search.json"
     window.hexo_root = "/"
-    window.isPost = false
+    window.isPost = true
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script src="/js/gitment.js"></script>
+<script>
+    var gitment = new Gitment({
+        id: 'for循环中i++和++i的区别',
+        owner: 'netsssss',
+        repo: 'NetsSsSs blog',
+        oauth: {
+            client_id: 'b3dff31cb64aefc16b5c',
+            client_secret: '2ee483f0cb98833e3fd10bf56ecae4158e08a6e2',
+        },
+    })
+    gitment.render('comment-container')
+</script>
 
 </html>
