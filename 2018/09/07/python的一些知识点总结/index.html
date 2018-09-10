@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="NetsSsSs的博客">
+    <meta name="keyword"  content="腾讯">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        python的一些知识点总结 - NetsSsSs的博客 | NetsSsSs&#39;s Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 不应怠惰 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/img/avatar.jpg" />
+        </div>
+        <div class="name">
+            <i>NetsSsSs</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#总结了些知识点在这记录一下"><span class="toc-text">总结了些知识点在这记录一下</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、常用正则表达式符号和语法"><span class="toc-text">一、常用正则表达式符号和语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、打开文件时的读写模式"><span class="toc-text">二、打开文件时的读写模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、python格式化输出"><span class="toc-text">三、python格式化输出</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#格式"><span class="toc-text">格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参数"><span class="toc-text">参数</span></a></li></ol></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 不应怠惰 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        python的一些知识点总结
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2018-09-07 23:42:35</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#python" title="python">python</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h1 id="总结了些知识点在这记录一下"><a href="#总结了些知识点在这记录一下" class="headerlink" title="总结了些知识点在这记录一下"></a>总结了些知识点在这记录一下</h1><h2 id="一、常用正则表达式符号和语法"><a href="#一、常用正则表达式符号和语法" class="headerlink" title="一、常用正则表达式符号和语法"></a>一、常用正则表达式符号和语法</h2><p>‘.’ 匹配所有字符串，除\n以外<br>‘-’ 表示范围[0-9]<br>‘<em>‘ 匹配前面的子表达式零次或多次。要匹配 </em> 字符，请使用 *。<br>‘+’ 匹配前面的子表达式一次或多次。要匹配 + 字符，请使用 +<br>‘^’ 匹配字符串开头<br>‘$’ 匹配字符串结尾 re<br>‘\’ 转义字符， 使后一个字符改变原来的意思，如果字符串中有字符<em>需要匹配，可以\</em>或者字符集[<em>] re.findall(r’3\</em>‘,’3<em>ds’)结[‘3</em>‘]<br>‘<em>‘ 匹配前面的字符0次或多次 re.findall(“ab</em>“,”cabc3abcbbac”)结果：[‘ab’, ‘ab’, ‘a’]<br>‘?’ 匹配前一个字符串0次或1次 re.findall(‘ab?’,’abcabcabcadf’)结果[‘ab’, ‘ab’, ‘ab’, ‘a’]<br>‘{m}’ 匹配前一个字符m次 re.findall(‘cb{1}’,’bchbchcbfbcbb’)结果[‘cb’, ‘cb’]<br>‘{n,m}’ 匹配前一个字符n到m次 re.findall(‘cb{2,3}’,’bchbchcbfbcbb’)结果[‘cbb’]<br>‘\d’ 匹配数字，等于[0-9] re.findall(‘\d’,’电话:10086’)结果[‘1’, ‘0’, ‘0’, ‘8’, ‘6’]<br>‘\D’ 匹配非数字，等于[^0-9] re.findall(‘\D’,’电话:10086’)结果[‘电’, ‘话’, ‘:’]<br>‘\w’ 匹配字母和数字，等于[A-Za-z0-9] re.findall(‘\w’,’alex123,./;;;’)结果[‘a’, ‘l’, ‘e’, ‘x’, ‘1’, ‘2’, ‘3’]<br>‘\W’ 匹配非英文字母和数字,等于[^A-Za-z0-9] re.findall(‘\W’,’alex123,./;;;’)结果[‘,’, ‘.’, ‘/‘, ‘;’, ‘;’, ‘;’]<br>‘\s’ 匹配空白字符 re.findall(‘\s’,’3<em>ds \t\n’)结果[‘ ‘, ‘\t’, ‘\n’]<br>‘\S’ 匹配非空白字符 re.findall(‘\s’,’3</em>ds \t\n’)结果[‘3’, ‘<em>‘, ‘d’, ‘s’]<br>‘\A’ 匹配字符串开头<br>‘\Z’ 匹配字符串结尾<br>‘\b’ 匹配单词的词首和词尾，单词被定义为一个字母数字序列，因此词尾是用空白符或非字母数字符来表示的<br>‘\B’ 与\b相反，只在当前位置不在单词边界时匹配<br>‘(?P<name>…)’ 分组，除了原有编号外在指定一个额外的别名 re.search(“(?P<province>[0-9]{4})(?P<city>[0-9]{2})(?P<birthday>[0-9]{8})”,”371481199306143242”).groupdict(“city”) 结果{‘province’: ‘3714’, ‘city’: ‘81’, ‘birthday’: ‘19930614’}<br>[] 是定义匹配的字符范围。比如 [a-zA-Z0-9] 表示相应位置的字符要匹配英文字符和数字。[\s</birthday></city></province></name></em>]表示空格或者*号。</p>
+<h2 id="二、打开文件时的读写模式"><a href="#二、打开文件时的读写模式" class="headerlink" title="二、打开文件时的读写模式"></a>二、打开文件时的读写模式</h2><p>1    r    打开的文件为只读模式。文件指针位于文件的开头，这是默认模式。<br>2    rb    打开仅用二进制格式读取的文件。文件指针位于文件的开头，这是默认模式。<br>3    r+    打开读写文件。文件指针放在文件的开头。<br>4    rb+    以二进制格式打开一个用于读写文件。文件指针放在文件的开头。<br>5    w    打开仅供写入的文件。 如果文件存在，则覆盖该文件。 如果文件不存在，则创建一个新文件进行写入。<br>6    wb    打开仅用二进制格式写入的文件。如果文件存在，则覆盖该文件。 如果文件不存在，则创建一个新文件进行写入。<br>7    w+    打开写入和取读的文件。如果文件存在，则覆盖现有文件。 如果文件不存在，创建一个新文件进行阅读和写入。<br>8    wb+    打开一个二进制格式的写入和读取文件。 如果文件存在，则覆盖现有文件。 如果文件不存在，创建一个新文件进行阅读和写入。<br>9    a    打开一个文件进行追加。 如果文件存在，则文件指针位于文件末尾。也就是说，文件处于追加模式。如果文件不存在，它将创建一个新文件进行写入。<br>10    ab    打开一个二进制格式的文件。如果文件存在，则文件指针位于文件末尾。 也就是说，文件处于追加模式。如果文件不存在，它将创建一个新文件进行写入。<br>11    a+    打开一个文件，用于追加和阅读。 如果文件存在，则文件指针位于文件末尾。 文件以附加模式打开。 如果文件不存在，它将创建一个新文件进行阅读和写入。<br>12    ab+    打开一个二进制格式的附加和读取文件。 如果文件存在，则文件指针位于文件末尾。文件以附加模式打开。如果文件不存在，它将创建一个新文件进行读取和写入。</p>
+<h2 id="三、python格式化输出"><a href="#三、python格式化输出" class="headerlink" title="三、python格式化输出"></a>三、python格式化输出</h2><h3 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h3><p>[[fill]align][sign][#][0][width][,][.precision][type]</p>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>fill 【可选】空白处填充的字符<br>align 【可选】对齐方式（需配合width使用）<br>‘&lt;’，内容左对齐<br>‘&gt;’&gt;,内容右对齐(默认)<br>＝，内容右对齐，将符号放置在填充字符的左侧，且只对数字类型有效。 即使：符号+填充物+数字<br>，内容居中<br>sign 【可选】有无符号数字<br>+，正号加正，负号加负；<br>-，正号不变，负号加负；<br>空格 ，正号空格，负号加负；</p>
+<p>#【可选】对于二进制、八进制、十六进制，如果加上#，会显示 0b/0o/0x，否则不显示<br>， 【可选】为数字添加分隔符，如：1,000,000<br>width 【可选】格式化位所占宽度<br>.precision 【可选】小数位保留精度<br>type 【可选】格式化类型<br>传入” 字符串类型 “的参数<br>s，格式化字符串类型数据<br>空白，未指定类型，则默认是None，同s<br>传入“ 整数类型 ”的参数<br>b，将10进制整数自动转换成2进制表示然后格式化<br>c，将10进制整数自动转换为其对应的unicode字符<br>d，十进制整数<br>o，将10进制整数自动转换成8进制表示然后格式化；<br>x，将10进制整数自动转换成16进制表示然后格式化（小写x）<br>X，将10进制整数自动转换成16进制表示然后格式化（大写X）<br>传入“ 浮点型或小数类型 ”的参数<br>e， 转换为科学计数法（小写e）表示，然后格式化；<br>E， 转换为科学计数法（大写E）表示，然后格式化;<br>f ， 转换为浮点型（默认小数点后保留6位）表示，然后格式化；<br>F， 转换为浮点型（默认小数点后保留6位）表示，然后格式化；<br>g， 自动在e和f中切换<br>G， 自动在E和F中切换<br>%，显示百分比（默认显示小数点后6位）</p>
+<p>用法举例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/env python</div><div class="line"># -*- coding: UTF-8 -*-</div><div class="line">#pyversion:python3.5</div><div class="line">#owner:fuzj</div><div class="line"></div><div class="line">f1 = &quot;i am &#123;0&#125;, i am &#123;1&#125;d years old&quot;.format(&apos;Jeck&apos;,26)         #采用位置参数来索引</div><div class="line">f2 = &quot;i am &#123;name&#125;, i am &#123;age&#125;d years old&quot;.format(**&#123;&apos;name&apos;:&apos;jeck&apos;,&apos;age&apos;:26&#125;)   #采用自定义key来缩影,此时**表示将字典的k/v取出</div><div class="line">f3 = &quot;--&#123;name:*^10s&#125;--   ==&#123;age:&lt;10.2f&#125;==&quot;.format(name=&apos;Jeck&apos;,age=26.457)   #将name的宽度设置为10,空余的使用*号不全,并居中显示,age类型设置为浮点型,宽度为10.并左对齐</div><div class="line">f4 = &quot;原数:&#123;:d&#125;  二进制:&#123;:b&#125;, 八进制:&#123;:o&#125;, 十六进制x:&#123;:x&#125;,十六进制X:&#123;:X&#125;&quot;.format(15, 15, 15, 15, 15)   #进制转换</div><div class="line">f5 = &quot;原数:&#123;:d&#125;, 科学计数法e:&#123;:e&#125;, 科学计数法E:&#123;:E&#125;&quot; .format(1000000000,1000000000,1000000000)    #科学计数法表示</div><div class="line">f6 = &quot;原数:&#123;:2F&#125;, 百分号表示&#123;:.2%&#125;,  原数:&#123;:d&#125;,自动分割表示:&#123;:,&#125;&quot;.format(0.75,0.7584,10000000,10000000 )  #百分号表示及自动分割</div><div class="line"></div><div class="line">print(f1)</div><div class="line">print(f2)</div><div class="line">print(f3)</div><div class="line">print(f4)</div><div class="line">print(f5)</div><div class="line">print(f6)</div></pre></td></tr></table></figure></p>
+<p>输出结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">i am Jeck, i am 26d years old</div><div class="line">i am jeck, i am 26d years old</div><div class="line">--***Jeck***--   ==26.46     ==</div><div class="line">原数:15  二进制:1111, 八进制:17, 十六进制x:f,十六进制X:F</div><div class="line">原数:1000000000, 科学计数法e:1.000000e+09, 科学计数法E:1.000000E+09</div><div class="line">原数:0.750000, 百分号表示75.84%,  原数:10000000,自动分割表示:10,000,000</div></pre></td></tr></table></figure></p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="/img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <div id="comment-container">
+        </div>
+    </div>
+</div>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+        <li>
+            <a target="_blank" href="https://www.zhihu.com/people/ting-feng-mu-yu-59">
+                            <span class="fa-stack fa-lg">
+                                 <i class="iconfont icon-zhihu"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+        <li>
+            <a target="_blank" href="http://weibo.com/5022761699">
+                            <span class="fa-stack fa-lg">
+                                  <i class="iconfont icon-weibo"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+        <li>
+            <a target="_blank" href="https://www.facebook.com/netsssss">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-facebook"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/netsssss">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a href="http://www.baidu.com">baidu</a></span>
+        <span>/</span>
+        
+        <span><a href="http://www.bilibili.com/">bilibili</a></span>
+        <span>/</span>
+        
+        <span><a href="https://fanyi.baidu.com">fanyi</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script src="/js/gitment.js"></script>
+<script>
+    var gitment = new Gitment({
+        id: 'python的一些知识点总结',
+        owner: 'netsssss',
+        repo: 'netsssss.github.io',
+        oauth: {
+            client_id: 'b3dff31cb64aefc16b5c',
+            client_secret: '2ee483f0cb98833e3fd10bf56ecae4158e08a6e2',
+        },
+    })
+    gitment.render('comment-container')
+</script>
+
+</html>
