@@ -1,0 +1,112 @@
+@charset "utf-8";
+  #hero-slides {
+	--page: 0;
+	height: 300px;
+	background: #fff;
+	/* background: linear-gradient(90deg, #3e4751 0%, #fff 100%); */
+  }
+  #hero-slides #header {
+	height: 12vh;
+	line-height: 12vh;
+	padding: 0 3vw;
+	position: relative;
+  }
+  #hero-slides #header #logo {
+	font-size: 2.5vh;
+	font-style: italic;
+  }
+  #hero-slides #header #logo:before {
+	content: 'The';
+	text-transform: uppercase;
+	font-weight: 100;
+	margin-right: 0.4em;
+  }
+  #hero-slides #header #logo:after {
+	content: 'Wall';
+	text-transform: uppercase;
+	font-weight: 800;
+  }
+  #hero-slides #header #menu {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	cursor: pointer;
+	padding: 0 3vw;
+  }
+  #hero-slides #header #menu:before {
+	font-size: 1.75vh;
+	content: 'Play Demo';
+	margin-right: 0.5em;
+	text-transform: uppercase;
+  }
+  #hero-slides #header #menu #hamburger {
+	display: inline-block;
+  }
+  #hero-slides #header #menu #hamburger .slice {
+	background: white;
+	height: 0.2vh;
+	width: 1vw;
+  }
+  #hero-slides #header #menu #hamburger .slice:not(:last-child) {
+	margin-bottom: 0.5vh;
+  }
+  #hero-slides #slides-cont {
+	position: relative;
+	--button-height: 6vh;
+	--button-spacing: 0.2vh;
+  }
+  #hero-slides #slides-cont .button {
+	width: 5vw;
+	height: var(--button-height);
+	background: #0d96f2;
+	position: absolute;
+	right: 5.375vw;
+	top: 38vh;
+	z-index: 100;
+	cursor: pointer;
+  }
+  #hero-slides #slides-cont .button:before, #hero-slides #slides-cont .button:after {
+	line-height: var(--button-height);
+	position: absolute;
+	margin-left: -0.25vw;
+	pointer-events: none;
+	-webkit-transform: scale(0.75, 1.5);
+			transform: scale(0.75, 1.5);
+	transition: 125ms ease-in-out;
+  }
+  #hero-slides #slides-cont .button:before {
+	left: 50%;
+  }
+  #hero-slides #slides-cont .button:after {
+	opacity: 0;
+  }
+  #hero-slides #slides-cont .button:hover:before, #hero-slides #slides-cont .button:hover:after {
+	transition: 250ms ease-in-out;
+  }
+  #hero-slides #slides-cont .button:hover:before {
+	opacity: 0;
+  }
+  #hero-slides #slides-cont .button:hover:after {
+	left: 50% !important;
+	opacity: 1;
+  }
+  #hero-slides #slides-cont #next {
+	margin-top: calc(-1 * (var(--button-height) + var(--button-spacing)));
+  }
+  #hero-slides #slides-cont #next:before, #hero-slides #slides-cont #next:after {
+	content: '>';
+  }
+  #hero-slides #slides-cont #next:after {
+	left: 30%;
+  }
+  #hero-slides #slides-cont #next:hover:before {
+	left: 70%;
+  }
+  #hero-slides #slides-cont #prev {
+	margin-top: var(--button-spacing);
+	opacity: calc(var(--page) + 0.5);
+	transition: 500ms opacity;
+  }
+  #hero-slides #slides-cont #prev:before, #hero-slides #slides-cont #prev:after {
+	content: '

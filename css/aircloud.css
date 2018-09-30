@@ -198,6 +198,9 @@ body {
   height: 70vh;
   margin-top: 15vh;
   background-color: white;
+  
+  /*new_attr*/
+  border-radius: 5px;
 }
 .search-field .search-container .search-input {
   width: 100%;
@@ -233,7 +236,7 @@ body {
   padding-right: 5px;
 
   /*new_attr*/
-  border-radius: 15px;
+  border-radius: 5px;
 }
 .search-field .search-result-container {
   height: calc(70vh - 50px);

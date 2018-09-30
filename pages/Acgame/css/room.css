@@ -1,0 +1,64 @@
+@charset "utf-8";
+body{background: #FFFFFF url(../image/Re.jpg) no-repeat; 
+     background-size: cover;
+     color: #FFF;
+     font-family:'Aladin', cursive,"微软雅黑 Light";}
+     
+header{font-size: 28px;
+       margin: 0px auto;
+       font-weight: bolder;
+       text-align: center;}
+       
+.return{position: fixed;
+        top: 50px;
+        left: 50px;
+        cursor: pointer;
+        display: inline-block;
+        width: 80px;
+        height: 40px;
+        background: rgba(0,0,0,0.5);
+        text-align: center;
+        line-height: 40px;
+        color: #FFFFFF;
+        text-decoration: none;
+        transition: all 0.3s;}
+               
+.return:hover{background: rgba(227,83,93,0.5);}
+       
+.room_left{float: left;
+           margin: 100px 0px 0px 200px;
+           width: 400px;
+           box-sizing: border-box;}
+
+.room_left img{height: 400px;
+               padding: 5px;
+               border: solid 5px rgba(0,0,0,0.5);}
+
+.room_right{float: right;
+            margin: 100px 200px 0px 0px;
+            width: 400px;
+            height: 400px;
+            box-sizing: border-box;
+            padding: 10px 20px;
+            line-height: 2em;
+            background: rgba(0,0,0,0.5);
+            position: relative;}
+            
+.room_right p{text-indent: 2em;}            
+            
+.room_button{display: inline-block;
+             width: 100px;
+             height: 40px;
+             background: rgba(0,0,0,0.5);
+             text-align: center;
+             line-height: 40px;
+             position: absolute;
+             bottom: 20px;
+             right: 20px;
+             color: rgba#FFF;
+             cursor: pointer;
+             transition: all 0.3s;}
+             
+.room_button:hover{
+        color:#FFF; 
+        background:rgba(227,83,93,0.5); }
