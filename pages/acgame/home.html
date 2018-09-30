@@ -209,45 +209,45 @@
 						slideChildren[index].classList.remove('hover');
 				}
 				
-				async function demo() {
-					if(currentlyDemoing) {
-						return;
-					}
-					currentlyDemoing = true;
-					if(currentPage !== 0) {
-						goToPage(0);
-						await sleep(800);
-					}
-					let slides = slidesPerPage();
-					let pageSeq_ = { 2: [ 1, 2, 1 ], 3: [ 1, 2, 1 / 3 ], 4: [ 1, 1, 0 ] };
-					let pageSeq = pageSeq_[slides] || pageSeq_[4];
-					let slideSeq_ = { 2: [ 2, 4, 3 ], 3: [ 3, 6, 2 ], 4: [ 3, 6, 2 ] };
-					let slideSeq = slideSeq_[slides] || slideSeq_[2];
-					await sleep(300);
-					goToPage(pageSeq[0]);
-					await sleep(500);
-					hoverSlide(slideSeq[0]);
-					await sleep(1200);
-					goToPage(pageSeq[1]);
-					unhoverSlide(slideSeq[0]);
-					await sleep(500);
-					hoverSlide(slideSeq[1]);
-					await sleep(1200);
-					goToPage(pageSeq[2]);
-					unhoverSlide(slideSeq[1]);
-					await sleep(300);
-					hoverSlide(slideSeq[2]);
-					await sleep(1600);
-					goToPage(0);
-					unhoverSlide(slideSeq[2]);
-					currentlyDemoing = false;
-				}
+				// async function demo() {
+				// 	if(currentlyDemoing) {
+				// 		return;
+				// 	}
+				// 	currentlyDemoing = true;
+				// 	if(currentPage !== 0) {
+				// 		goToPage(0);
+				// 		await sleep(800);
+				// 	}
+				// 	let slides = slidesPerPage();
+				// 	let pageSeq_ = { 2: [ 1, 2, 1 ], 3: [ 1, 2, 1 / 3 ], 4: [ 1, 1, 0 ] };
+				// 	let pageSeq = pageSeq_[slides] || pageSeq_[4];
+				// 	let slideSeq_ = { 2: [ 2, 4, 3 ], 3: [ 3, 6, 2 ], 4: [ 3, 6, 2 ] };
+				// 	let slideSeq = slideSeq_[slides] || slideSeq_[2];
+				// 	await sleep(300);
+				// 	goToPage(pageSeq[0]);
+				// 	await sleep(500);
+				// 	hoverSlide(slideSeq[0]);
+				// 	await sleep(1200);
+				// 	goToPage(pageSeq[1]);
+				// 	unhoverSlide(slideSeq[0]);
+				// 	await sleep(500);
+				// 	hoverSlide(slideSeq[1]);
+				// 	await sleep(1200);
+				// 	goToPage(pageSeq[2]);
+				// 	unhoverSlide(slideSeq[1]);
+				// 	await sleep(300);
+				// 	hoverSlide(slideSeq[2]);
+				// 	await sleep(1600);
+				// 	goToPage(0);
+				// 	unhoverSlide(slideSeq[2]);
+				// 	currentlyDemoing = false;
+				// }
 				
 				next.forEach(n => n.addEventListener('click', () => !currentlyDemoing && goToPage(currentPage + 1)));
 				prev.forEach(n => n.addEventListener('click', () => !currentlyDemoing && goToPage(currentPage - 1)));
 				// menu.addEventListener('click', demo);
 				
-				sleep(100).then(demo);
+				// sleep(100).then(demo);
 				
 				// window.addEventListener('resize', () => {
 					// console.log(document.body.style.getPropertyValue('--slide-per-page'));
