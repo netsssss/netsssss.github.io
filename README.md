@@ -1,3 +1,3 @@
-### 个人网站
+### 个人博客
 
 ### 地址： https://netsssss.github.io
