@@ -225,7 +225,8 @@ body {
 }
 .search-field .search-container .search-input input {
   flex: 1;
-  background-color: #f3f4f7;
+  /*background-color: #f3f4f7;*/
+  background-color: rgba(255,255,255,0.8);
   border: 1px solid #cccccc;
   height: 30px;
   font-size: 18px;
@@ -234,9 +235,6 @@ body {
   font-weight: 300;
   padding-left: 5px;
   padding-right: 5px;
-
-  /*new_attr*/
-  border-radius: 5px;
 }
 .search-field .search-result-container {
   height: calc(70vh - 50px);
