@@ -155,8 +155,7 @@
         <h4 id="变得同样清晰"><a href="#变得同样清晰" class="headerlink" title="变得同样清晰"></a>变得同样清晰</h4><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/image-rendering" target="_blank" rel="external">image-rendering</a></p>
 <p>出现这种情况主要是因为 Chrome 默认对图片做了反锯齿。而IE没做，所以感觉上IE出现了“更清晰”感觉。</p>
 <p>给图片css加上 image-rendering: pixelated; 就可以同样清晰了。</p>
-<h4 id="变得同样模糊"><a href="#变得同样模糊" class="headerlink" title="变得同样模糊"></a>变得同样模糊</h4><p>给图片css加上 filter: blur(5px); -webkit-filter: blur(5px); 即可。</p>
-
+<h4 id="变得同样模糊"><a href="#变得同样模糊" class="headerlink" title="变得同样模糊"></a>变得同样模糊</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;svg width=&quot;500&quot; height=&quot;500&quot;&gt;</div><div class="line">  &lt;filter id=&quot;blurMe&quot;&gt;</div><div class="line">    &lt;feGaussianBlur in=&quot;SourceGraphic&quot; stdDeviation=&quot;3&quot; /&gt;</div><div class="line">  &lt;/filter&gt;</div><div class="line">  &lt;image filter=&quot;url(#blurMe)&quot; width=&quot;100%&quot; height=&quot;100%&quot; xlink:href=&quot;https://netsssss.github.io/img/avatar.jpg&quot; alt=&quot;&quot;  /&gt;</div><div class="line">&lt;/svg&gt;</div></pre></td></tr></table></figure>
         
             <div class="donate-container">
     <div class="donate-button">
