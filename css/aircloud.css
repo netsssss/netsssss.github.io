@@ -197,10 +197,8 @@ body {
   min-width: 500px;
   height: 70vh;
   margin-top: 15vh;
-  background-color: white;
-  
-  /*new_attr*/
-  border-radius: 5px;
+  /*background-color: white;*/
+  background-color: rgba(255,255,255,0.8);
 }
 .search-field .search-container .search-input {
   width: 100%;
