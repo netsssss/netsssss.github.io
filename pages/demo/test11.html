@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .a {
+            padding: 30px 50px;
+            width: 500px;
+            cursor: pointer;
+        }
+        .b {
+            transition: transform 0.5s, transform-origin 0.5s;
+            position: relative;
+            font-size: 26px;
+            z-index: 1;
+        }
+        .c {
+            transition: all 0.5s;
+            content: '';
+            width: 120px;
+            height: 3px;
+            position: relative;
+            top: -10px;
+            background-color: #000;
+            opacity: 0;
+        }
+        .d {
+            transition: all 0.5s;
+            opacity: 0.5;
+            font-family: Microsoft YaHei;
+            font-size: 16px;
+            color: #000000;
+            height: 16px;
+            position: relative;
+            top: 10px;
+            left: 0px;
+        }
+        .a:hover .b {
+            top: -20px !important;
+            transform: scale(1.2);
+            transform-origin: left 50%;
+            color: #FFBA1E;
+        }
+        .a:hover .c {
+            color: #FFBA1E !important;
+            background: #FFBA1E !important;
+            opacity: 1 !important;
+        }
+        .a:hover .d {
+            color: #FFBA1E !important;
+            opacity: 1 !important;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="a">
+        <div class="b">美食hello world hello world</div>
+        <div class="c"></div>
+        <div class="d">hahaha</div>
+    </div>
+    <div class="a">
+        <div class="b">甜品hello world hello world</div>
+        <div class="c"></div>
+        <div class="d">hahaha</div>
+    </div>
+    <div class="a">
+        <div class="b">水果hello world hello world</div>
+        <div class="c"></div>
+        <div class="d">hahaha</div>
+    </div>
+</body>
+</html>
