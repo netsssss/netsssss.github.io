@@ -6,8 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
+        .img {
+            background: url(https://i.loli.net/2018/12/03/5c04ab05123a4.png);
+            background-size: 100%;
+            transition: all 0.5s;
+            width: 40px;
+            height: 40px;
+            position: relative;
+            top: 40px;
+            left: -60px;
+        }
         .a {
-            padding: 30px 50px;
+            padding: 20px 60px;
             width: 500px;
             cursor: pointer;
         }
@@ -18,7 +28,7 @@
             z-index: 1;
         }
         .c {
-            transition: all 0.5s;
+            transition: all 0s;
             content: '';
             width: 120px;
             height: 3px;
@@ -37,6 +47,17 @@
             position: relative;
             top: 10px;
             left: 0px;
+        }
+        .a:hover .img {
+            background: url(https://i.loli.net/2018/12/03/5c04aa6405737.png);
+            background-size: 100%;
+            transition: all 0.5s;
+            width: 40px;
+            height: 40px;
+            position: relative;
+            
+
+            
         }
         .a:hover .b {
             top: -20px !important;
@@ -58,16 +79,19 @@
 </head>
 <body>
     <div class="a">
+        <div class="img"></div>
         <div class="b">美食hello world hello world</div>
         <div class="c"></div>
         <div class="d">hahaha</div>
     </div>
     <div class="a">
+        <div class="img"></div>
         <div class="b">甜品hello world hello world</div>
         <div class="c"></div>
         <div class="d">hahaha</div>
     </div>
     <div class="a">
+        <div class="img"></div>
         <div class="b">水果hello world hello world</div>
         <div class="c"></div>
         <div class="d">hahaha</div>
