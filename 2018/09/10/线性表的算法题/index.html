@@ -1,700 +1,282 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="zh">
+<html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="js,数据结构," />
-
-
-
-
-
-
-
-
-
-
-<meta name="description" content="已知线性表A的长度为n，并且采用顺序存储结构。写一算法，删除线性表中所有值为x的元素。这道题的思路是这样的：  1.用i循环遍历数组，直到遇到值为’x’的元素，将用来记录x个数的count加1，  2.在这个时候用j从这个位置继续往后遍历，因为题目并没说明x是不连续的，所以用j遍历数组直到找到一个不是’x’的元素，  3.将j位置的元素和i位置的元素调换位置，也就是把发现的x和后面的第一个非x元素">
-<meta property="og:type" content="article">
-<meta property="og:title" content="线性表的算法题">
-<meta property="og:url" content="http://yoursite.com/2018/09/10/线性表的算法题/index.html">
-<meta property="og:site_name" content="NetsSsSs Blog">
-<meta property="og:description" content="已知线性表A的长度为n，并且采用顺序存储结构。写一算法，删除线性表中所有值为x的元素。这道题的思路是这样的：  1.用i循环遍历数组，直到遇到值为’x’的元素，将用来记录x个数的count加1，  2.在这个时候用j从这个位置继续往后遍历，因为题目并没说明x是不连续的，所以用j遍历数组直到找到一个不是’x’的元素，  3.将j位置的元素和i位置的元素调换位置，也就是把发现的x和后面的第一个非x元素">
-<meta property="og:image" content="http://wx2.sinaimg.cn/large/005tUZLtly1fv4diziw1gj30mf0b3q47.jpg">
-<meta property="og:updated_time" content="2018-09-16T09:14:40.513Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="线性表的算法题">
-<meta name="twitter:description" content="已知线性表A的长度为n，并且采用顺序存储结构。写一算法，删除线性表中所有值为x的元素。这道题的思路是这样的：  1.用i循环遍历数组，直到遇到值为’x’的元素，将用来记录x个数的count加1，  2.在这个时候用j从这个位置继续往后遍历，因为题目并没说明x是不连续的，所以用j遍历数组直到找到一个不是’x’的元素，  3.将j位置的元素和i位置的元素调换位置，也就是把发现的x和后面的第一个非x元素">
-<meta name="twitter:image" content="http://wx2.sinaimg.cn/large/005tUZLtly1fv4diziw1gj30mf0b3q47.jpg">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="http://yoursite.com/2018/09/10/线性表的算法题/"/>
-
-
-
-
-
-  <title>线性表的算法题 | NetsSsSs Blog</title>
-  
-
-
-
-
-
-
-
-
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="baidu-site-verification" content="usMJoXhxQ3" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="NetsSsSs的博客">
+    <meta name="keyword"  content="腾讯">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        线性表的算法题 - Ns Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <!-- Baidu Push -->
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh">
+<body>
 
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">NetsSsSs Blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle">不应怠惰</p>
-      
-  </div>
-
-  <div class="site-nav-toggle">
+<div class="site-nav-toggle" id="site-nav-toggle">
     <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
     </button>
-  </div>
 </div>
 
-<nav class="site-nav">
-  
+<div class="index-about">
+    <i> 不应怠惰 </i>
+</div>
 
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            Home
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            About
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            Tags
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            Archives
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
+<div class="index-container">
     
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/10/线性表的算法题/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="NetsSsSs">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="NetsSsSs Blog">
-    </span>
-
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/img/avatar.jpg" />
+        </div>
+        <div class="name">
+            <i>NetsSsSs</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
     
-      <header class="post-header">
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#已知线性表A的长度为n，并且采用顺序存储结构。写一算法，删除线性表中所有值为x的元素。"><span class="toc-text">已知线性表A的长度为n，并且采用顺序存储结构。写一算法，删除线性表中所有值为x的元素。</span></a></li></ol>
+</div>
+    
+</div>
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">线性表的算法题</h1>
-        
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-10T11:09:47+08:00">
-                2018-09-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
 
         </div>
-      </header>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 不应怠惰 </i>
+        </div>
+    </div>
     
+    <div class="index-middle">
+        <!-- Main Content -->
+        
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
 
-      
-      
+<div class="post-container">
+    <div class="post-title">
+        线性表的算法题
+    </div>
 
-      
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2018-09-10 11:09:47</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#js" title="js">js</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#数据结构" title="数据结构">数据结构</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
         <h3 id="已知线性表A的长度为n，并且采用顺序存储结构。写一算法，删除线性表中所有值为x的元素。"><a href="#已知线性表A的长度为n，并且采用顺序存储结构。写一算法，删除线性表中所有值为x的元素。" class="headerlink" title="已知线性表A的长度为n，并且采用顺序存储结构。写一算法，删除线性表中所有值为x的元素。"></a>已知线性表A的长度为n，并且采用顺序存储结构。写一算法，删除线性表中所有值为x的元素。</h3><p>这道题的思路是这样的：<br>  1.用i循环遍历数组，直到遇到值为’x’的元素，将用来记录x个数的count加1，<br>  2.在这个时候用j从这个位置继续往后遍历，因为题目并没说明x是不连续的，所以用j遍历数组直到找到一个不是’x’的元素，<br>  3.将j位置的元素和i位置的元素调换位置，也就是把发现的x和后面的第一个非x元素的位置调换一下，这个时候因为算法的原因count记录的个数比原数组中’x’的个数多了一些，多的这些就是调换位置之后再次被i遍历到的’x’，所以应该在发生调换的时候令count减1，这样count就会记录真实的’x’的个数，<br>  4.继续遍历数组，重复2、3的过程直到i遍历结束，<br>  5.遍历结束后’x’将全部移动到数组末尾，所以只需要将原数组的长度减少count就可以删除数组中全部的’x’。</p>
 <hr>
 <p>  人家本来让用伪C语言写，但是我刚好在写js所以就用js写了，里面用的方法什么的伪C语言里面也都有，所以应该差不多吧…<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    var e = [&apos;1&apos;,&apos;2&apos;,&apos;x&apos;,&apos;x&apos;,&apos;3&apos;,&apos;4&apos;,&apos;5&apos;,&apos;x&apos;,&apos;6&apos;,&apos;x&apos;,&apos;x&apos;,&apos;x&apos;,&apos;7&apos;,&apos;8&apos;,&apos;9&apos;,&apos;0&apos;];  //假定的原始数组</div><div class="line">    var n = e.length;                                                           //数组的长度n = 16</div><div class="line">    var i,j,temp;                                                                  //循环中用到的变量和中间值</div><div class="line">    var count = 0;                                                               //统计&apos;x&apos;的个数</div><div class="line">    for(i = 0; i&lt;=n-1; i++)&#123;                                                   //首层for循环遍历e中所有元素</div><div class="line">      if(e[i] == &apos;x&apos;)&#123;                                                               //当e[i]等于&apos;x&apos;时记录此时i的位置，改用j继续遍历知道遇到非&apos;x&apos;的值为止</div><div class="line">        for(j = i; j&lt;=n-1; j++)&#123;                                                //用j从i的位置继续遍历数组</div><div class="line">          if(e[j] != &apos;x&apos;)&#123;                                                            //当e[j]不等于&apos;x&apos;时，记录j的位置判断是否已经遍历结束，如果没有结束则将e[j]位置的非&apos;x&apos;值与e[i]位置的&apos;x&apos;调换位置</div><div class="line">            if(j&lt;n)&#123;                                                                  //...不想写了...</div><div class="line">              temp = e[i];</div><div class="line">              e[i] = e[j];</div><div class="line">              e[j] = temp;</div><div class="line">              count = count - 1;</div><div class="line">              break;</div><div class="line">            &#125;else if (j==n) &#123;</div><div class="line">              break;</div><div class="line">            &#125;</div><div class="line">          &#125;</div><div class="line">        &#125;</div><div class="line">        count = count + 1;</div><div class="line">      &#125;</div><div class="line">      console.log(&apos;e=&apos;,e);</div><div class="line">    &#125;</div><div class="line">    console.log(&apos;count=&apos;,count);</div><div class="line">    e.length -= count;</div><div class="line">    console.log(&apos;new e=&apos;,e);</div><div class="line">  &lt;/script&gt;</div></pre></td></tr></table></figure></p>
 <p>输出结果如下：<br><img src="http://wx2.sinaimg.cn/large/005tUZLtly1fv4diziw1gj30mf0b3q47.jpg" alt="输出结果"></p>
 
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/js/" rel="tag"># js</a>
-          
-            <a href="/tags/数据结构/" rel="tag"># 数据结构</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/09/08/python的一些知识点总结/" rel="next" title="python的一些知识点总结">
-                <i class="fa fa-chevron-left"></i> python的一些知识点总结
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/10/(闲的无聊的分享)_科学上网/" rel="prev" title="(闲的无聊的分享) 科学上网">
-                (闲的无聊的分享) 科学上网 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-
-  
-
-
-
-        </div>
         
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
     </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">NetsSsSs</p>
-              <p class="site-description motion-element" itemprop="description">NetsSsSs的博客</p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">18</span>
-                  <span class="site-state-item-name">posts</span>
-                </a>
-              </div>
-            
-
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">20</span>
-                  <span class="site-state-item-name">tags</span>
-                </a>
-              </div>
-            
-
-          </nav>
-
-          
-
-          
-
-          
-          
-
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#已知线性表A的长度为n，并且采用顺序存储结构。写一算法，删除线性表中所有值为x的元素。"><span class="nav-number">1.</span> <span class="nav-text">已知线性表A的长度为n，并且采用顺序存储结构。写一算法，删除线性表中所有值为x的元素。</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="/img/donate.jpg">
+        <p> 感谢鼓励 </p>
     </div>
-  </aside>
-
-
+</div>
         
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">NetsSsSs</span>
-
-  
+        <div id="comment-container">
+        </div>
+    </div>
+</div>
+    </div>
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+        <li>
+            <a target="_blank" href="https://www.zhihu.com/people/ting-feng-mu-yu-59">
+                            <span class="fa-stack fa-lg">
+                                 <i class="iconfont icon-zhihu"></i>
+                            </span>
+            </a>
+        </li>
+        
 
+        
+        <li>
+            <a target="_blank" href="http://weibo.com/5022761699">
+                            <span class="fa-stack fa-lg">
+                                  <i class="iconfont icon-weibo"></i>
+                            </span>
+            </a>
+        </li>
+        
 
+        
+        <li>
+            <a target="_blank" href="https://www.facebook.com/netsssss">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-facebook"></i>
+                            </span>
+            </a>
+        </li>
+        
 
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
-
-
-
+        
+        <li>
+            <a target="_blank"  href="https://github.com/netsssss">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
 
         
 
-
-
-
-
-
-
+    </ul>
+    
+    <p>
+        <span>/</span>
         
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
+        <span><a href="http://www.baidu.com">baidu</a></span>
+        <span>/</span>
         
-      </div>
+        <span><a href="http://www.bilibili.com/">bilibili</a></span>
+        <span>/</span>
+        
+        <span><a href="https://fanyi.baidu.com">fanyi</a></span>
+        <span>/</span>
+        
+    </p>
     
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
 
-    
 
-  </div>
 
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
 
 </body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script src="/js/gitment.js"></script>
+<script>
+    var gitment = new Gitment({
+        id: '线性表的算法题',
+        owner: 'netsssss',
+        repo: 'netsssss.github.io',
+        oauth: {
+            client_id: 'b3dff31cb64aefc16b5c',
+            client_secret: '2ee483f0cb98833e3fd10bf56ecae4158e08a6e2',
+        },
+    })
+    gitment.render('comment-container')
+</script>
+
 </html>
