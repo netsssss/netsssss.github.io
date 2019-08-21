@@ -158,7 +158,14 @@
 </li>
 <li><p>元素默认的margin，padding，border值为0</p>
 </li>
-<li><p>margin可以设置负值</p>
+<li><p><strong>margin可以设置负值</strong></p>
+<blockquote>
+<ol>
+<li>当块元素没有设定宽度时，负left和right会增加左边或右边的宽度</li>
+<li>设置负top时会向上移动</li>
+<li>设置负bottom时会向上移动并减少元素的css读取高度(缩减了元素的content区域)</li>
+</ol>
+</blockquote>
 </li>
 <li><p><strong>box-sizing拥有两个常用属性</strong></p>
 <blockquote>
