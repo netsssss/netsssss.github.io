@@ -160,13 +160,19 @@
 <p>开发vscode插件其实就是在写node，只是在需要与编辑器交互的时候，调用以下vscode提供的事件回调</p>
 </blockquote>
 </li>
-<li>常用回调事件：<br> 事件|解释<br> :-|:-<br> vscode.commands.registerCommand|接收到命令时<br> vscode.commands.registerTextEditorCommand|在编辑器界面接收到命令时<br> vscode.workspace.onDidChangeTextDocument|工作区文档改变时<br> vscode.workspace.onDidSaveTextDocument|工作区文档保存时</li>
+<li><p>常用回调事件：</p>
+<p> 事件|解释<br> :-|:-<br> vscode.commands.registerCommand|接收到命令时<br> vscode.commands.registerTextEditorCommand|在编辑器界面接收到命令时<br> vscode.workspace.onDidChangeTextDocument|工作区文档改变时<br> vscode.workspace.onDidSaveTextDocument|工作区文档保存时</p>
+</li>
 <li><p>写法：</p>
 <ol>
 <li>官方推荐使用<code>yo code</code>自动构建项目框架，构建完成后再debug页面点击开始按钮即可调试示例插件</li>
-<li>如果仅仅想做简单的配置，其实只需要创建三个文件即可，分别是合并了manifest.json的package.json，处理事件的extension.js和用于调试的.vscode/launch.json<ol>
-<li>package.json中应该含有：<br> key|value<br> :-|:-<br> name|插件的名字<br> engines|插件支持的最低vscode版本<br> activationEvents|何时启动插件(可以写”*”)<br> contributes|注册指令</li>
-<li>extension.js中应该暴露两个出口，分别是activate和deactivate，代表插件开始运行和插件释放，所有注册类指令都需要push在activate中的context.subscriptions中</li>
+<li><p>如果仅仅想做简单的配置，其实只需要创建三个文件即可，分别是合并了manifest.json的package.json，处理事件的extension.js和用于调试的.vscode/launch.json</p>
+<ol>
+<li><p>package.json中应该含有：</p>
+<p> key|value<br> :-|:-<br> name|插件的名字<br> engines|插件支持的最低vscode版本<br> activationEvents|何时启动插件(可以写”*”)<br> contributes|注册指令</p>
+</li>
+<li><p>extension.js中应该暴露两个出口，分别是activate和deactivate，代表插件开始运行和插件释放，所有注册类指令都需要push在activate中的context.subscriptions中</p>
+</li>
 <li>.vscode/launch.json中应该写入： <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;version&quot;: &quot;0.2.0&quot;,</div><div class="line">    &quot;configurations&quot;: [</div><div class="line">        &#123;</div><div class="line">            &quot;name&quot;: &quot;启动扩展&quot;,</div><div class="line">            &quot;type&quot;: &quot;extensionHost&quot;,</div><div class="line">            &quot;request&quot;: &quot;launch&quot;,</div><div class="line">            &quot;runtimeExecutable&quot;: &quot;$&#123;execPath&#125;&quot;,</div><div class="line">            &quot;args&quot;: [</div><div class="line">                &quot;--extensionDevelopmentPath=$&#123;workspaceFolder&#125;&quot;</div><div class="line">            ]</div><div class="line">        &#125;</div><div class="line">    ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ol>
