@@ -184,7 +184,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -194,7 +194,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
-            Über
+            About
           </a>
         </li>
       
@@ -214,7 +214,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -280,7 +280,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-20T21:52:15+08:00">
                 2019-08-20
@@ -327,10 +327,16 @@
 <p>开发vscode插件其实就是在写node，只是在需要与编辑器交互的时候，调用以下vscode提供的事件回调</p>
 </blockquote>
 </li>
-<li><p>常用回调事件：<br> |事件|解释|<br> |:-:|:-:|<br> |vscode.commands.registerCommand|接收到命令时|<br> |vscode.commands.registerTextEditorCommand|在编辑器界面接收到命令时|<br> |vscode.workspace.onDidChangeTextDocument|工作区文档改变时|<br> |vscode.workspace.onDidSaveTextDocument|工作区文档保存时|</p>
-</li>
-<li><p>写法：</p>
-<ol>
+<li>常用回调事件：</li>
+</ol>
+<pre><code>|事件|解释|
+|:-:|:-:|
+|vscode.commands.registerCommand|接收到命令时|
+|vscode.commands.registerTextEditorCommand|在编辑器界面接收到命令时|
+|vscode.workspace.onDidChangeTextDocument|工作区文档改变时|
+|vscode.workspace.onDidSaveTextDocument|工作区文档保存时|
+</code></pre><ol>
+<li>写法：<ol>
 <li>官方推荐使用<code>yo code</code>自动构建项目框架，构建完成后再debug页面点击开始按钮即可调试示例插件</li>
 <li>如果仅仅想做简单的配置，其实只需要创建三个文件即可，分别是合并了manifest.json的package.json，处理事件的extension.js和用于调试的.vscode/launch.json<ol>
 <li>package.json中应该含有：</li>
@@ -440,7 +446,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-18T00:36:15+08:00">
                 2019-08-18
@@ -584,7 +590,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-27T11:20:50+08:00">
                 2019-06-27
@@ -704,7 +710,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-27T11:01:50+08:00">
                 2019-06-27
@@ -825,7 +831,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-10T14:32:07+08:00">
                 2018-11-10
@@ -947,7 +953,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-10T13:31:21+08:00">
                 2018-11-10
@@ -1080,7 +1086,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-09T21:32:28+08:00">
                 2018-11-09
@@ -1206,7 +1212,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-09T20:37:11+08:00">
                 2018-11-09
@@ -1364,7 +1370,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-09T20:13:10+08:00">
                 2018-11-09
@@ -1492,7 +1498,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-09T19:18:24+08:00">
                 2018-11-09
@@ -1628,7 +1634,7 @@
                 <a href="/archives/">
               
                   <span class="site-state-item-count">18</span>
-                  <span class="site-state-item-name">Artikel</span>
+                  <span class="site-state-item-name">posts</span>
                 </a>
               </div>
             
@@ -1641,7 +1647,7 @@
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
                   <span class="site-state-item-count">20</span>
-                  <span class="site-state-item-name">Tags</span>
+                  <span class="site-state-item-name">tags</span>
                 </a>
               </div>
             
@@ -1687,7 +1693,7 @@
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
