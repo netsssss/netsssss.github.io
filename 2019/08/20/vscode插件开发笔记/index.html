@@ -131,7 +131,7 @@ vscode.commands.registerTextEditorCommand
 
 
 vscode.workspace.on">
-<meta property="og:updated_time" content="2019-08-22T00:52:55.018Z">
+<meta property="og:updated_time" content="2019-08-22T02:08:18.933Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vscode插件开发笔记">
 <meta name="twitter:description" content="总结：
@@ -253,7 +253,7 @@ vscode.workspace.on">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -263,7 +263,7 @@ vscode.workspace.on">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
-            Über
+            About
           </a>
         </li>
       
@@ -283,7 +283,7 @@ vscode.workspace.on">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -347,7 +347,7 @@ vscode.workspace.on">
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-20T21:52:15+08:00">
                 2019-08-20
@@ -430,12 +430,13 @@ vscode.workspace.on">
 </ol>
 </li>
 </ol>
-<pre><code>key|value
-:-|:-
-name|插件的名字
-engines|插件支持的最低vscode版本
-activationEvents|何时启动插件(可以写&quot;*&quot;)
-contributes|注册指令
+<pre><code>    key|value
+    :-|:-
+    name|插件的名字
+    engines|插件支持的最低vscode版本
+    activationEvents|何时启动插件(可以写&quot;*&quot;)
+    contributes|注册指令
+
 
 2. extension.js中应该暴露两个出口，分别是activate和deactivate，代表插件开始运行和插件释放，所有注册类指令都需要push在activate中的context.subscriptions中
 3. .vscode/launch.json中应该写入：
@@ -565,7 +566,7 @@ contributes|注册指令
                 <a href="/archives/">
               
                   <span class="site-state-item-count">18</span>
-                  <span class="site-state-item-name">Artikel</span>
+                  <span class="site-state-item-name">posts</span>
                 </a>
               </div>
             
@@ -578,7 +579,7 @@ contributes|注册指令
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
                   <span class="site-state-item-count">20</span>
-                  <span class="site-state-item-name">Tags</span>
+                  <span class="site-state-item-name">tags</span>
                 </a>
               </div>
             
@@ -624,7 +625,7 @@ contributes|注册指令
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
