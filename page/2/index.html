@@ -1,318 +1,409 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>NetsSsSs Blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="NetsSsSs的博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="NetsSsSs Blog">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
-<meta property="og:site_name" content="NetsSsSs Blog">
-<meta property="og:description" content="NetsSsSs的博客">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="NetsSsSs Blog">
-<meta name="twitter:description" content="NetsSsSs的博客">
-  
-    <link rel="alternate" href="/atom.xml" title="NetsSsSs Blog" type="application/atom+xml">
-  
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0.css">
-  <link rel="stylesheet" href="/lib/fancybox/dist/jquery.fancybox.min.css">
-  <link rel="stylesheet" href="/css/main.css">
-  <script src="/lib/jquery/dist/jquery.min.js"></script>
-  
-  
-  
-  
-</head>
-<body>
-  <div id="wrapper">
-    <header id="header" class="clearfix">
-	<a id="logo" href="/" title="NetsSsSs Blog">NetsSsSs Blog</a>
-	
-		<p class="description">不应怠惰</p>
-	
-	<nav id="nav-menu" class="clearfix">
-		<form id="search" method="post" action="./" role="search">
-			<input id="search-input" type="text" name="s" class="inputbox" value="Search" onfocus="if (value =='Search'){value =''}" onblur="if (value ==''){value='Search'}">
-		</form>
-		<ul>
-      
-				
-        <li><a class="main-nav-link" href="/">Home</a></li>
-      
-				
-        <li><a class="main-nav-link" href="/archives">Archives</a></li>
-      
-		</ul>
-	</nav>
-</header>
-    <section id="main" class="clearfix">
-  <article class="post">
-      
-        
-          <h1><a href="/2018/10/06/收集了一堆视频解析接口/">收集了一堆视频解析接口...</a></h1>
-        
-      
-      <div class="post-content ">
-        
-  
-
-
-
-
-        <h4 id="起因："><a href="#起因：" class="headerlink" title="起因："></a>起因：</h4><p>无意中看到很久之前做的静态网页…</p>
-<hr>
-<h4 id="经过："><a href="#经过：" class="headerlink" title="经过："></a>经过：</h4><p>那个网页是个视频网页，我就想要不就用这个干脆做个后台吧。于是开始到网上搜视频解析网站看看，发现他们都是解析了视频后台传回源地址给浏览器的，一开始还以为解析接口里会有站长的会员cookie来着，结果碰了一鼻子灰，后来我就想，既然他的后台返回的是源地址，那我就直接伪造他前台的请求直接拿他解析的源地址好了…</p>
-<hr>
-<h4 id="结果："><a href="#结果：" class="headerlink" title="结果："></a>结果：</h4><p><a href="http://www.jiexihu.com/" target="_blank" rel="external">http://www.jiexihu.com/</a><br><a href="http://yun.baiyug.cn/vip/?url=" target="_blank" rel="external">http://yun.baiyug.cn/vip/?url=</a><br><a href="https://aip.hackmg.com/index.php?url=" target="_blank" rel="external">https://aip.hackmg.com/index.php?url=</a><br><a href="http://api.bbbbbb.me/jx/?url=" target="_blank" rel="external">http://api.bbbbbb.me/jx/?url=</a><br><a href="https://yun.jxegc.com/vip.php?url=" target="_blank" rel="external">https://yun.jxegc.com/vip.php?url=</a><br><a href="http://film.qq.com/film_index_prevue/index.html?firstVid=v0027v0lxjz" target="_blank" rel="external">http://film.qq.com/film_index_prevue/index.html?firstVid=v0027v0lxjz</a></p>
-
-      </div>
-  </article>
-
-  <article class="post">
-      
-        
-          <h1><a href="/2018/10/06/在vue中使用base64解码获得服务器端jwt加密的payload/">在Vue中使用Base64解码获得服务器端jwt加密的payload</a></h1>
-        
-      
-      <div class="post-content ">
-        
-  
-
-
-
-
-        <p>安装”js-base64”</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install js-base64 --save</div></pre></td></tr></table></figure>
-<p>在项目中引入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">let Base64 = require(&apos;js-base64&apos;).Base64;</div></pre></td></tr></table></figure>
-<p>参照如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">let vm = new Object(&#123;</div><div class="line">    data() &#123;</div><div class="line">        return&#123;</div><div class="line">            username: &apos;No User&apos;,</div><div class="line">            role: &apos;&apos;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    created() &#123;</div><div class="line">        if(localStorage.getItem(&apos;user&apos;) == null) &#123;</div><div class="line">            this.username = &apos;No User&apos;</div><div class="line">            this.role = &apos;&apos;;</div><div class="line">        &#125; else &#123;</div><div class="line">            var decodeToken = Base64.decode((JSON.parse(localStorage.getItem(&apos;user&apos;)).token).split(&apos;.&apos;)[1])</div><div class="line">            decodeToken = JSON.parse(decodeToken);</div><div class="line">            this.username = decodeToken.username;</div><div class="line">            this.role = decodeToken.role;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">//  ...</div><div class="line">&#125;);</div><div class="line"></div><div class="line">export default vm;</div></pre></td></tr></table></figure>
-      </div>
-  </article>
-
-  <article class="post">
-      
-        
-          <h1><a href="/2018/09/10/(闲的无聊的分享)_科学上网/">(闲的无聊的分享) 科学上网</a></h1>
-        
-      
-      <div class="post-content ">
-        
-  
-
-
-
-
-        <p>就是你想要的那种。<br>链接: <a href="https://pan.baidu.com/s/1Gx5Z53R929lhK0aeLBI4uQ" target="_blank" rel="external">https://pan.baidu.com/s/1Gx5Z53R929lhK0aeLBI4uQ</a><br>密码: 7ycy<br>解压密码: 我的名字是…(￣▽￣)。</p>
-<p><img src="http://wx2.sinaimg.cn/large/005tUZLtly1fv4f1fjze2j31hc0xcnpd.jpg" alt="你的名字"></p>
-
-      </div>
-  </article>
-
-  <article class="post">
-      
-        
-          <h1><a href="/2018/09/10/线性表的算法题/">线性表的算法题</a></h1>
-        
-      
-      <div class="post-content ">
-        
-  
-
-
-
-
-        <h3 id="已知线性表A的长度为n，并且采用顺序存储结构。写一算法，删除线性表中所有值为x的元素。"><a href="#已知线性表A的长度为n，并且采用顺序存储结构。写一算法，删除线性表中所有值为x的元素。" class="headerlink" title="已知线性表A的长度为n，并且采用顺序存储结构。写一算法，删除线性表中所有值为x的元素。"></a>已知线性表A的长度为n，并且采用顺序存储结构。写一算法，删除线性表中所有值为x的元素。</h3><p>这道题的思路是这样的：<br>  1.用i循环遍历数组，直到遇到值为’x’的元素，将用来记录x个数的count加1，<br>  2.在这个时候用j从这个位置继续往后遍历，因为题目并没说明x是不连续的，所以用j遍历数组直到找到一个不是’x’的元素，<br>  3.将j位置的元素和i位置的元素调换位置，也就是把发现的x和后面的第一个非x元素的位置调换一下，这个时候因为算法的原因count记录的个数比原数组中’x’的个数多了一些，多的这些就是调换位置之后再次被i遍历到的’x’，所以应该在发生调换的时候令count减1，这样count就会记录真实的’x’的个数，<br>  4.继续遍历数组，重复2、3的过程直到i遍历结束，<br>  5.遍历结束后’x’将全部移动到数组末尾，所以只需要将原数组的长度减少count就可以删除数组中全部的’x’。</p>
-<hr>
-<p>  人家本来让用伪C语言写，但是我刚好在写js所以就用js写了，里面用的方法什么的伪C语言里面也都有，所以应该差不多吧…<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    var e = [&apos;1&apos;,&apos;2&apos;,&apos;x&apos;,&apos;x&apos;,&apos;3&apos;,&apos;4&apos;,&apos;5&apos;,&apos;x&apos;,&apos;6&apos;,&apos;x&apos;,&apos;x&apos;,&apos;x&apos;,&apos;7&apos;,&apos;8&apos;,&apos;9&apos;,&apos;0&apos;];  //假定的原始数组</div><div class="line">    var n = e.length;                                                           //数组的长度n = 16</div><div class="line">    var i,j,temp;                                                                  //循环中用到的变量和中间值</div><div class="line">    var count = 0;                                                               //统计&apos;x&apos;的个数</div><div class="line">    for(i = 0; i&lt;=n-1; i++)&#123;                                                   //首层for循环遍历e中所有元素</div><div class="line">      if(e[i] == &apos;x&apos;)&#123;                                                               //当e[i]等于&apos;x&apos;时记录此时i的位置，改用j继续遍历知道遇到非&apos;x&apos;的值为止</div><div class="line">        for(j = i; j&lt;=n-1; j++)&#123;                                                //用j从i的位置继续遍历数组</div><div class="line">          if(e[j] != &apos;x&apos;)&#123;                                                            //当e[j]不等于&apos;x&apos;时，记录j的位置判断是否已经遍历结束，如果没有结束则将e[j]位置的非&apos;x&apos;值与e[i]位置的&apos;x&apos;调换位置</div><div class="line">            if(j&lt;n)&#123;                                                                  //...不想写了...</div><div class="line">              temp = e[i];</div><div class="line">              e[i] = e[j];</div><div class="line">              e[j] = temp;</div><div class="line">              count = count - 1;</div><div class="line">              break;</div><div class="line">            &#125;else if (j==n) &#123;</div><div class="line">              break;</div><div class="line">            &#125;</div><div class="line">          &#125;</div><div class="line">        &#125;</div><div class="line">        count = count + 1;</div><div class="line">      &#125;</div><div class="line">      console.log(&apos;e=&apos;,e);</div><div class="line">    &#125;</div><div class="line">    console.log(&apos;count=&apos;,count);</div><div class="line">    e.length -= count;</div><div class="line">    console.log(&apos;new e=&apos;,e);</div><div class="line">  &lt;/script&gt;</div></pre></td></tr></table></figure></p>
-<p>输出结果如下：<br><img src="http://wx2.sinaimg.cn/large/005tUZLtly1fv4diziw1gj30mf0b3q47.jpg" alt="输出结果"></p>
-
-      </div>
-  </article>
-
-  <article class="post">
-      
-        
-          <h1><a href="/2018/09/08/python的一些知识点总结/">python的一些知识点总结</a></h1>
-        
-      
-      <div class="post-content ">
-        
-  
-
-
-
-
-        <h1 id="总结了些知识点在这记录一下"><a href="#总结了些知识点在这记录一下" class="headerlink" title="总结了些知识点在这记录一下"></a>总结了些知识点在这记录一下</h1><h2 id="一、常用正则表达式符号和语法"><a href="#一、常用正则表达式符号和语法" class="headerlink" title="一、常用正则表达式符号和语法"></a>一、常用正则表达式符号和语法</h2><p>‘.’ 匹配所有字符串，除\n以外<br>‘-’ 表示范围[0-9]<br>‘<em>‘ 匹配前面的子表达式零次或多次。要匹配 </em> 字符，请使用 *。<br>‘+’ 匹配前面的子表达式一次或多次。要匹配 + 字符，请使用 +<br>‘^’ 匹配字符串开头<br>‘$’ 匹配字符串结尾 re<br>‘\’ 转义字符， 使后一个字符改变原来的意思，如果字符串中有字符<em>需要匹配，可以\</em>或者字符集[<em>] re.findall(r’3\</em>‘,’3<em>ds’)结[‘3</em>‘]<br>‘<em>‘ 匹配前面的字符0次或多次 re.findall(“ab</em>“,”cabc3abcbbac”)结果：[‘ab’, ‘ab’, ‘a’]<br>‘?’ 匹配前一个字符串0次或1次 re.findall(‘ab?’,’abcabcabcadf’)结果[‘ab’, ‘ab’, ‘ab’, ‘a’]<br>‘{m}’ 匹配前一个字符m次 re.findall(‘cb{1}’,’bchbchcbfbcbb’)结果[‘cb’, ‘cb’]<br>‘{n,m}’ 匹配前一个字符n到m次 re.findall(‘cb{2,3}’,’bchbchcbfbcbb’)结果[‘cbb’]<br>‘\d’ 匹配数字，等于[0-9] re.findall(‘\d’,’电话:10086’)结果[‘1’, ‘0’, ‘0’, ‘8’, ‘6’]<br>‘\D’ 匹配非数字，等于[^0-9] re.findall(‘\D’,’电话:10086’)结果[‘电’, ‘话’, ‘:’]<br>‘\w’ 匹配字母和数字，等于[A-Za-z0-9] re.findall(‘\w’,’alex123,./;;;’)结果[‘a’, ‘l’, ‘e’, ‘x’, ‘1’, ‘2’, ‘3’]<br>‘\W’ 匹配非英文字母和数字,等于[^A-Za-z0-9] re.findall(‘\W’,’alex123,./;;;’)结果[‘,’, ‘.’, ‘/‘, ‘;’, ‘;’, ‘;’]<br>‘\s’ 匹配空白字符 re.findall(‘\s’,’3<em>ds \t\n’)结果[‘ ‘, ‘\t’, ‘\n’]<br>‘\S’ 匹配非空白字符 re.findall(‘\s’,’3</em>ds \t\n’)结果[‘3’, ‘<em>‘, ‘d’, ‘s’]<br>‘\A’ 匹配字符串开头<br>‘\Z’ 匹配字符串结尾<br>‘\b’ 匹配单词的词首和词尾，单词被定义为一个字母数字序列，因此词尾是用空白符或非字母数字符来表示的<br>‘\B’ 与\b相反，只在当前位置不在单词边界时匹配<br>‘(?P<name>…)’ 分组，除了原有编号外在指定一个额外的别名 re.search(“(?P<province>[0-9]{4})(?P<city>[0-9]{2})(?P<birthday>[0-9]{8})”,”371481199306143242”).groupdict(“city”) 结果{‘province’: ‘3714’, ‘city’: ‘81’, ‘birthday’: ‘19930614’}<br>[] 是定义匹配的字符范围。比如 [a-zA-Z0-9] 表示相应位置的字符要匹配英文字符和数字。[\s</birthday></city></province></name></em>]表示空格或者*号。</p>
-<h2 id="二、打开文件时的读写模式"><a href="#二、打开文件时的读写模式" class="headerlink" title="二、打开文件时的读写模式"></a>二、打开文件时的读写模式</h2><p>r    打开的文件为只读模式。文件指针位于文件的开头，这是默认模式。<br>rb    打开仅用二进制格式读取的文件。文件指针位于文件的开头，这是默认模式。<br>r+    打开读写文件。文件指针放在文件的开头。<br>rb+    以二进制格式打开一个用于读写文件。文件指针放在文件的开头。<br>w    打开仅供写入的文件。 如果文件存在，则覆盖该文件。 如果文件不存在，则创建一个新文件进行写入。<br>wb    打开仅用二进制格式写入的文件。如果文件存在，则覆盖该文件。 如果文件不存在，则创建一个新文件进行写入。<br>w+    打开写入和取读的文件。如果文件存在，则覆盖现有文件。 如果文件不存在，创建一个新文件进行阅读和写入。<br>wb+    打开一个二进制格式的写入和读取文件。 如果文件存在，则覆盖现有文件。 如果文件不存在，创建一个新文件进行阅读和写入。<br>a    打开一个文件进行追加。 如果文件存在，则文件指针位于文件末尾。也就是说，文件处于追加模式。如果文件不存在，它将创建一个新文件进行写入。<br>ab    打开一个二进制格式的文件。如果文件存在，则文件指针位于文件末尾。 也就是说，文件处于追加模式。如果文件不存在，它将创建一个新文件进行写入。<br>a+    打开一个文件，用于追加和阅读。 如果文件存在，则文件指针位于文件末尾。 文件以附加模式打开。 如果文件不存在，它将创建一个新文件进行阅读和写入。<br>ab+    打开一个二进制格式的附加和读取文件。 如果文件存在，则文件指针位于文件末尾。文件以附加模式打开。如果文件不存在，它将创建一个新文件进行读取和写入。</p>
-<h2 id="三、python格式化输出"><a href="#三、python格式化输出" class="headerlink" title="三、python格式化输出"></a>三、python格式化输出</h2><h3 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h3><p>[[fill]align][sign][#][0][width][,][.precision][type]</p>
-<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><p>fill 【可选】空白处填充的字符<br>align 【可选】对齐方式（需配合width使用）<br>‘&lt;’，内容左对齐<br>‘&gt;’，内容右对齐(默认)<br>＝，内容右对齐，将符号放置在填充字符的左侧，且只对数字类型有效。 即使：符号+填充物+数字<br>，内容居中<br>sign 【可选】有无符号数字<br>+，正号加正，负号加负；<br>-，正号不变，负号加负；<br>空格 ，正号空格，负号加负；</p>
-<p>#【可选】对于二进制、八进制、十六进制，如果加上#，会显示 0b/0o/0x，否则不显示<br>， 【可选】为数字添加分隔符，如：1,000,000<br>width 【可选】格式化位所占宽度<br>.precision 【可选】小数位保留精度<br>type 【可选】格式化类型<br>传入” 字符串类型 “的参数<br>s，格式化字符串类型数据<br>空白，未指定类型，则默认是None，同s<br>传入“ 整数类型 ”的参数<br>b，将10进制整数自动转换成2进制表示然后格式化<br>c，将10进制整数自动转换为其对应的unicode字符<br>d，十进制整数<br>o，将10进制整数自动转换成8进制表示然后格式化；<br>x，将10进制整数自动转换成16进制表示然后格式化（小写x）<br>X，将10进制整数自动转换成16进制表示然后格式化（大写X）<br>传入“ 浮点型或小数类型 ”的参数<br>e， 转换为科学计数法（小写e）表示，然后格式化；<br>E， 转换为科学计数法（大写E）表示，然后格式化;<br>f ， 转换为浮点型（默认小数点后保留6位）表示，然后格式化；<br>F， 转换为浮点型（默认小数点后保留6位）表示，然后格式化；<br>g， 自动在e和f中切换<br>G， 自动在E和F中切换<br>%，显示百分比（默认显示小数点后6位）</p>
-<p>用法举例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">#!/usr/bin/env python</div><div class="line"># -*- coding: UTF-8 -*-</div><div class="line">#pyversion:python3.5</div><div class="line">#owner:fuzj</div><div class="line"></div><div class="line">f1 = &quot;i am &#123;0&#125;, i am &#123;1&#125;d years old&quot;.format(&apos;Jeck&apos;,26)         #采用位置参数来索引</div><div class="line">f2 = &quot;i am &#123;name&#125;, i am &#123;age&#125;d years old&quot;.format(**&#123;&apos;name&apos;:&apos;jeck&apos;,&apos;age&apos;:26&#125;)   #采用自定义key来缩影,此时**表示将字典的k/v取出</div><div class="line">f3 = &quot;--&#123;name:*^10s&#125;--   ==&#123;age:&lt;10.2f&#125;==&quot;.format(name=&apos;Jeck&apos;,age=26.457)   #将name的宽度设置为10,空余的使用*号不全,并居中显示,age类型设置为浮点型,宽度为10.并左对齐</div><div class="line">f4 = &quot;原数:&#123;:d&#125;  二进制:&#123;:b&#125;, 八进制:&#123;:o&#125;, 十六进制x:&#123;:x&#125;,十六进制X:&#123;:X&#125;&quot;.format(15, 15, 15, 15, 15)   #进制转换</div><div class="line">f5 = &quot;原数:&#123;:d&#125;, 科学计数法e:&#123;:e&#125;, 科学计数法E:&#123;:E&#125;&quot; .format(1000000000,1000000000,1000000000)    #科学计数法表示</div><div class="line">f6 = &quot;原数:&#123;:2F&#125;, 百分号表示&#123;:.2%&#125;,  原数:&#123;:d&#125;,自动分割表示:&#123;:,&#125;&quot;.format(0.75,0.7584,10000000,10000000 )  #百分号表示及自动分割</div><div class="line"></div><div class="line">print(f1)</div><div class="line">print(f2)</div><div class="line">print(f3)</div><div class="line">print(f4)</div><div class="line">print(f5)</div><div class="line">print(f6)</div></pre></td></tr></table></figure></p>
-<p>输出结果：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">i am Jeck, i am 26d years old</div><div class="line">i am jeck, i am 26d years old</div><div class="line">--***Jeck***--   ==26.46     ==</div><div class="line">原数:15  二进制:1111, 八进制:17, 十六进制x:f,十六进制X:F</div><div class="line">原数:1000000000, 科学计数法e:1.000000e+09, 科学计数法E:1.000000E+09</div><div class="line">原数:0.750000, 百分号表示75.84%,  原数:10000000,自动分割表示:10,000,000</div></pre></td></tr></table></figure></p>
-<p><img src="https://i.loli.net/2018/09/09/5b94bfe85fbea.jpg" alt=""></p>
-
-      </div>
-  </article>
-
-  <article class="post">
-      
-        
-          <h1><a href="/2018/09/07/for循环中i++和++i的区别/">for循环中i++和++i的区别</a></h1>
-        
-      
-      <div class="post-content ">
-        
-  
-
-
-
-
-        
-<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="baidu-site-verification" content="usMJoXhxQ3" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="NetsSsSs的博客">
+    <meta name="keyword"  content="腾讯">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        Ns Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <!-- Baidu Push -->
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
 </head>
+
 <body>
-  <div>
-    <p>顺便尝试html能否写在博客内</p>
-    <h3>(输出结果在控制台)</h3>
-    <p>---------------------------------------</p>
-    <p>在for中第三个元素中使用时效果————完全一样~</p>
-    <p>i++和++i在独立使用时效果是完全一样的</p>
-    <p>本来是想验证某线性表的结果</p>
-    <p>输出大概长这样：</p>
-    <pre>
-      i is : 5
-      i is : 4
-      i is : 3
-      i is : 2
-      i2 is : 5
-      i2 is : 4
-      i2 is : 3
-      i2 is : 2
-      length is : 7
-      l is : Array(10)
-        0: 1
-        1: 2
-        2: 9
-        3: 3
-        4: 3
-        5: 4
-        6: 5
-        length: 10
-        __proto__: Array(0)</pre>
-  </div>
-    <p>js长这样：</p>
-  <script>
 
-  var ll=new Array(10);
-  ll[0]=1
-  ll[1]=2
-  ll[2]=3
-  ll[3]=4
-  ll[4]=5
-  ll[5]=6
-  length = 6;
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
 
-  function insert(l){
-    var p,i,i2;
-    p = 2;
-    for(i = length-1; i>=p; --i){
-      l[i+1]=l[i];
-      console.log("i is :",i);
-    }
-    for(i2 = length-1; i2>=p; i2--){
-      l[i2+1]=l[i2];
-      console.log("i2 is :",i2);
-    }
-    l[p]=9;
-    length = length +1;
-    console.log("length is :",length);
-    console.log("l is :",l);
-  }
+<div class="index-about">
+    <i> 不应怠惰 </i>
+</div>
 
-  insert(ll);
-  </script>
-</body>
-</html>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">/*</div><div class="line">var ll=new Array(10);</div><div class="line">ll[0]=1</div><div class="line">ll[1]=2</div><div class="line">ll[2]=3</div><div class="line">ll[3]=4</div><div class="line">ll[4]=5</div><div class="line">ll[5]=6</div><div class="line">length = 6;</div><div class="line"></div><div class="line">function insert(l)&#123;</div><div class="line">  var p,i,i2;</div><div class="line">  p = 2;</div><div class="line">  for(i = length-1; i&gt;=p; --i)&#123;</div><div class="line">    l[i+1]=l[i];</div><div class="line">    console.log(&quot;i is :&quot;,i);</div><div class="line">  &#125;</div><div class="line">  for(i2 = length-1; i2&gt;=p; i2--)&#123;</div><div class="line">    l[i2+1]=l[i2];</div><div class="line">    console.log(&quot;i2 is :&quot;,i2);</div><div class="line">  &#125;</div><div class="line">  l[p]=9;</div><div class="line">  length = length +1;</div><div class="line">  console.log(&quot;length is :&quot;,length);</div><div class="line">  console.log(&quot;l is :&quot;,l);</div><div class="line">&#125;</div><div class="line"></div><div class="line">insert(ll);</div><div class="line">*/</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-
-
-      </div>
-  </article>
-
-  <article class="post">
-      
-        
-          <h1><a href="/2018/09/07/python爬虫的简单实现/">python爬虫的简单实现</a></h1>
-        
-      
-      <div class="post-content ">
-        
-  
-
-
-
-
-        <p>新手嘛，爬虫当然是最简单最容易学的吧~我是这么以为的，学了两天，做了这么个东西~<br>网上的都比较喜欢爬这个小说网站<a href="http://www.biqugecom.com/" target="_blank" rel="external">http://www.biqugecom.com/</a> ,试一下咯~<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div></pre></td><td class="code"><pre><div class="line">from bs4 import BeautifulSoup</div><div class="line">import re</div><div class="line">import requests</div><div class="line">import sys</div><div class="line">import time</div><div class="line">import random</div><div class="line">#目前有效20180907</div><div class="line">#先在D盘建一个叫aaa的文件夹</div><div class="line"></div><div class="line">#全局变量</div><div class="line">yuanshiurl = &apos;http://www.biqugecom.com/1/&apos;#原始url</div><div class="line">xinurl = &apos;&apos;#新url</div><div class="line">soupshuming = &apos;&apos;#小说名字</div><div class="line">soupnext = &apos;&apos;#下一章地址</div><div class="line">openshuhao = &apos;13503&apos;#书号</div><div class="line">zhangshu = 1#章数</div><div class="line"></div><div class="line">#交互</div><div class="line">print(&apos;请输入想要下载的小说的书号：&apos;)</div><div class="line">openshuhao = input()</div><div class="line">if openshuhao == &apos;&apos;:</div><div class="line">     print(&apos;未检测到书号，系统将随机抽取&apos;)</div><div class="line">     openshuhao = str(random.randint(1,15000))</div><div class="line">     #openshuhao = str(&apos;13503&apos;)</div><div class="line">print(&apos;下载书号：&apos;+str(openshuhao))</div><div class="line">print(&apos;即将开始下载,请耐心等待...&apos;)</div><div class="line"></div><div class="line">#初始化方法</div><div class="line">def chushihua(shuhao):</div><div class="line">     global soupnext</div><div class="line">     global soupshuming</div><div class="line">     global openshuhao</div><div class="line">     global zhangshu</div><div class="line">     url = yuanshiurl+str(shuhao)+&apos;/&apos;</div><div class="line">     r = requests.get(url)</div><div class="line">     r.encoding = &apos;gbk&apos;</div><div class="line">     soup = BeautifulSoup(r.text,&apos;html.parser&apos;)</div><div class="line">     soupshuming = soup.select(&apos;#info h1&apos;)[0].text#小说名字</div><div class="line">     soupzuozhe = soup.select(&apos;#info p&apos;)[0].text#作者名字</div><div class="line">     soupzuihougengxin = soup.select(&apos;#info p&apos;)[2].text#最后更新时间</div><div class="line">     soupjianjie = soup.select(&apos;#intro&apos;)[0].text#最后更新时间</div><div class="line">     soupzhengwen = soup.select(&apos;dd&apos;)[9].next_siblings</div><div class="line">     soupz = &apos;&apos;</div><div class="line">     for zs in soupzhengwen:</div><div class="line">          soupz +=str(zs)</div><div class="line">     soupzw = BeautifulSoup(soupz,&apos;html.parser&apos;)</div><div class="line">     zhangshu = len(soupzw.select(&apos;dd a&apos;))</div><div class="line">     #写入txt</div><div class="line">     f = open(&apos;D:\\aaa\\&apos;+soupshuming+&apos;.txt&apos;,&apos;ab+&apos;)</div><div class="line">     f.write((str(soupshuming) + &apos;\r\n&apos;).encode(&apos;UTF-8&apos;))</div><div class="line">     f.write((str(soupzuozhe) + &apos;\r\n&apos;).encode(&apos;UTF-8&apos;))</div><div class="line">     f.write((str(soupzuihougengxin) + &apos;\r\n&apos;).encode(&apos;UTF-8&apos;))</div><div class="line">     f.write((&apos;****简介****\r\n&apos;).encode(&apos;UTF-8&apos;))</div><div class="line">     f.write((str(soupjianjie) + &apos;\r\n&apos;).encode(&apos;UTF-8&apos;))</div><div class="line">     f.write((&apos;*************\r\n\r\n&apos;).encode(&apos;UTF-8&apos;))</div><div class="line">     f.close()</div><div class="line">     soupnext = soup.select(&apos;dd a&apos;)[9][&apos;href&apos;].split(&apos;/&apos;)[3]#第一章地址</div><div class="line">     print(&apos;开始下载：&apos;+soupshuming)</div><div class="line">     print(&apos;总章数：&apos;+str(zhangshu))</div><div class="line">     print(&apos;简介：&apos;+str(soupjianjie))</div><div class="line">chushihua(openshuhao)</div><div class="line"></div><div class="line">#单章下载方法</div><div class="line">def downloadxs():</div><div class="line">     global soupnext</div><div class="line">     r =  requests.get(xinurl)</div><div class="line">     r.encoding = &apos;gbk&apos;</div><div class="line">     soup = BeautifulSoup(r.text,&apos;html.parser&apos;)</div><div class="line">     soupname = soup.select(&apos;.bookname h1&apos;)[0].text#章节名称</div><div class="line">     souptext = soup.select(&apos;#content&apos;)[0]#章节内容</div><div class="line">     for ss in souptext.select(&quot;script&quot;):</div><div class="line">          ss.decompose()</div><div class="line">     for ss in souptext.select(&quot;a&quot;):</div><div class="line">          ss.decompose()</div><div class="line">     #soupnext = soup.select(&apos;#pager_next&apos;)[0][&apos;href&apos;]#下一章地址</div><div class="line">     soupnext = soup.select(&apos;.bottem1 a&apos;)[2][&apos;href&apos;]#下一章地址</div><div class="line">     souptext = re.sub(&apos;\s+&apos; ,&apos;\r\n\t&apos;, souptext.text).strip(&apos;\r\n&apos;)</div><div class="line">     f = open(&apos;D:\\aaa\\&apos;+soupshuming+&apos;.txt&apos;,&apos;ab+&apos;)</div><div class="line">     f.write((str(soupname) + &apos;\r\n&apos;).encode(&apos;UTF-8&apos;))</div><div class="line">     f.write((str(souptext) + &apos;\r\n&apos;).encode(&apos;UTF-8&apos;))</div><div class="line">     f.close()</div><div class="line"></div><div class="line">#拼接url方法</div><div class="line">def pinjieurl(shuhao):</div><div class="line">     global xinurl</div><div class="line">     xinurl = yuanshiurl+str(shuhao)+&apos;/&apos;+str(soupnext)</div><div class="line">pinjieurl(openshuhao)</div><div class="line"></div><div class="line">#下载</div><div class="line">def main():</div><div class="line">     for i in range(zhangshu):</div><div class="line">          pinjieurl(openshuhao)</div><div class="line">          downloadxs()</div><div class="line">          time.sleep(0.5)</div><div class="line">          print(&apos;\r下载中：&apos;+str(round(((100/zhangshu)*i),2))+&apos;%，已下载：&apos;+str(i+1)+&apos;章&apos;, end=&apos;&apos;)</div><div class="line">          sys.stdout.flush()</div><div class="line">main()</div></pre></td></tr></table></figure></p>
-<p>辣鸡爬虫，只能爬这一个网站，不过原理都是相同的吧（雾）。</p>
-<p><img src="https://user-images.githubusercontent.com/33678058/45262625-d8a4e700-b44c-11e8-8641-5cca539f6d2e.jpg" alt=""></p>
-
-      </div>
-  </article>
-
-  <article class="post">
-      
-        
-          <h1><a href="/2018/09/06/第一篇博客/">第一篇博客</a></h1>
-        
-      
-      <div class="post-content ">
-        
-  
-
-
-
-
-        <p>空闲时被安利来写博客, 我是什么水平我自己还不知道吗(╯°□°)╯︵ ┻━┻,<br>写优质文章是不可能写优质文章的, 学还没学会, 就是看看别人的博客, 然后写写感悟这样子…</p>
-<p><img src="http://wx2.sinaimg.cn/large/005tUZLtly1fv39ry35pxj33zs2gwe81.jpg" alt=""></p>
-
-      </div>
-  </article>
-
-
-  <nav class="pagination clearfix">
-  <ul>
+<div class="index-container">
     
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-  </ul>
-</nav>
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/img/avatar.jpg" />
+        </div>
+        <div class="name">
+            <i>NetsSsSs</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li  class=active >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+</div>
 
 
-</section>
-    <footer id="footer" role="contentinfo">
-    <div>&copy; 2019 <a href="/">NetsSsSs Blog</a>.
-    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Designed by <a href="http://rainylog.com" target="_blank">Rainy.</a>
-	</div>
-</footer><!-- end #footer -->
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
 
-  </div>
-  <script src="/lib/fancybox/dist/jquery.fancybox.min.js"></script>
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 不应怠惰 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+<div class="post-preview-container" style="min-height: 720px">
+    
+    <div class="post-preview">
+        <div class="post-time">2018-10-06</div>
+        <div class="post-info">
+            <a href="/2018/10/06/收集了一堆视频解析接口/">
+                <h3>
+                    收集了一堆视频解析接口...
+                </h3>
+            </a>
+            <p>
+                
+                <span>/</span>
+                
+                <a class="tag" href="/tags/#api" title="api">api</a>
+                <span>/</span>
+                
+                
+            </p>
+        </div>
+    </div>
+    
+    <div class="post-preview">
+        <div class="post-time">2018-10-06</div>
+        <div class="post-info">
+            <a href="/2018/10/06/在vue中使用base64解码获得服务器端jwt加密的payload/">
+                <h3>
+                    在Vue中使用Base64解码获得服务器端jwt加密的payload
+                </h3>
+            </a>
+            <p>
+                
+                <span>/</span>
+                
+                <a class="tag" href="/tags/#Vue" title="Vue">Vue</a>
+                <span>/</span>
+                
+                <a class="tag" href="/tags/#Base64" title="Base64">Base64</a>
+                <span>/</span>
+                
+                <a class="tag" href="/tags/#jwt" title="jwt">jwt</a>
+                <span>/</span>
+                
+                
+            </p>
+        </div>
+    </div>
+    
+    <div class="post-preview">
+        <div class="post-time">2018-09-10</div>
+        <div class="post-info">
+            <a href="/2018/09/10/(闲的无聊的分享)_科学上网/">
+                <h3>
+                    (闲的无聊的分享) 科学上网
+                </h3>
+            </a>
+            <p>
+                
+                <span>/</span>
+                
+                <a class="tag" href="/tags/#闲聊" title="闲聊">闲聊</a>
+                <span>/</span>
+                
+                
+            </p>
+        </div>
+    </div>
+    
+    <div class="post-preview">
+        <div class="post-time">2018-09-10</div>
+        <div class="post-info">
+            <a href="/2018/09/10/线性表的算法题/">
+                <h3>
+                    线性表的算法题
+                </h3>
+            </a>
+            <p>
+                
+                <span>/</span>
+                
+                <a class="tag" href="/tags/#js" title="js">js</a>
+                <span>/</span>
+                
+                <a class="tag" href="/tags/#数据结构" title="数据结构">数据结构</a>
+                <span>/</span>
+                
+                
+            </p>
+        </div>
+    </div>
+    
+    <div class="post-preview">
+        <div class="post-time">2018-09-08</div>
+        <div class="post-info">
+            <a href="/2018/09/08/python的一些知识点总结/">
+                <h3>
+                    python的一些知识点总结
+                </h3>
+            </a>
+            <p>
+                
+                <span>/</span>
+                
+                <a class="tag" href="/tags/#python" title="python">python</a>
+                <span>/</span>
+                
+                
+            </p>
+        </div>
+    </div>
+    
+    <div class="post-preview">
+        <div class="post-time">2018-09-07</div>
+        <div class="post-info">
+            <a href="/2018/09/07/for循环中i++和++i的区别/">
+                <h3>
+                    for循环中i++和++i的区别
+                </h3>
+            </a>
+            <p>
+                
+                <span>/</span>
+                
+                <a class="tag" href="/tags/#js" title="js">js</a>
+                <span>/</span>
+                
+                <a class="tag" href="/tags/#html" title="html">html</a>
+                <span>/</span>
+                
+                <a class="tag" href="/tags/#数据结构" title="数据结构">数据结构</a>
+                <span>/</span>
+                
+                
+            </p>
+        </div>
+    </div>
+    
+    <div class="post-preview">
+        <div class="post-time">2018-09-07</div>
+        <div class="post-info">
+            <a href="/2018/09/07/python爬虫的简单实现/">
+                <h3>
+                    python爬虫的简单实现
+                </h3>
+            </a>
+            <p>
+                
+                <span>/</span>
+                
+                <a class="tag" href="/tags/#python" title="python">python</a>
+                <span>/</span>
+                
+                <a class="tag" href="/tags/#BeautifulSoup" title="BeautifulSoup">BeautifulSoup</a>
+                <span>/</span>
+                
+                
+            </p>
+        </div>
+    </div>
+    
+    <div class="post-preview">
+        <div class="post-time">2018-09-06</div>
+        <div class="post-info">
+            <a href="/2018/09/06/第一篇博客/">
+                <h3>
+                    第一篇博客
+                </h3>
+            </a>
+            <p>
+                
+                <span>/</span>
+                
+                <a class="tag" href="/tags/#闲聊" title="闲聊">闲聊</a>
+                <span>/</span>
+                
+                
+            </p>
+        </div>
+    </div>
+    
+</div>
+<ul class="pager">
+    
+    <li class="previous">
+        <a href="/">&larr; Newer Posts</a>
+    </li>
+    
+    
+</ul>
 
-  <script src="/js/helper.js"></script>
-  <script src="/js/_third-party/gitment.js"></script>
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+        <li>
+            <a target="_blank" href="https://www.zhihu.com/people/ting-feng-mu-yu-59">
+                            <span class="fa-stack fa-lg">
+                                 <i class="iconfont icon-zhihu"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+        <li>
+            <a target="_blank" href="http://weibo.com/5022761699">
+                            <span class="fa-stack fa-lg">
+                                  <i class="iconfont icon-weibo"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+        <li>
+            <a target="_blank" href="https://www.facebook.com/netsssss">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-facebook"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/netsssss">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a href="http://www.baidu.com">baidu</a></span>
+        <span>/</span>
+        
+        <span><a href="http://www.bilibili.com/">bilibili</a></span>
+        <span>/</span>
+        
+        <span><a href="https://fanyi.baidu.com">fanyi</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
 </body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = false
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 </html>

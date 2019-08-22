@@ -1,114 +1,280 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  
-  <title>收集了一堆视频解析接口... | NetsSsSs Blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="起因：无意中看到很久之前做的静态网页…
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="baidu-site-verification" content="usMJoXhxQ3" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="NetsSsSs的博客">
+    <meta name="keyword"  content="腾讯">
+    <link rel="shortcut icon" href="/img/favicon.ico">
 
-经过：那个网页是个视频网页，我就想要不就用这个干脆做个后台吧。于是开始到网上搜视频解析网站看看，发现他们都是解析了视频后台传回源地址给浏览器的，一开始还以为解析接口里会有站长的会员cookie来着，结果碰了一鼻子灰，后来我就想，既然他的后台返回的是源地址，那我就直接伪造他前台的请求直接拿他解析的源地址好了…
+    <title>
+        
+        收集了一堆视频解析接口... - Ns Blog
+        
+    </title>
 
-结果：http://www.jiexihu.c">
-<meta property="og:type" content="article">
-<meta property="og:title" content="收集了一堆视频解析接口...">
-<meta property="og:url" content="http://yoursite.com/2018/10/06/收集了一堆视频解析接口/index.html">
-<meta property="og:site_name" content="NetsSsSs Blog">
-<meta property="og:description" content="起因：无意中看到很久之前做的静态网页…
-
-经过：那个网页是个视频网页，我就想要不就用这个干脆做个后台吧。于是开始到网上搜视频解析网站看看，发现他们都是解析了视频后台传回源地址给浏览器的，一开始还以为解析接口里会有站长的会员cookie来着，结果碰了一鼻子灰，后来我就想，既然他的后台返回的是源地址，那我就直接伪造他前台的请求直接拿他解析的源地址好了…
-
-结果：http://www.jiexihu.c">
-<meta property="og:updated_time" content="2018-11-09T12:32:36.086Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="收集了一堆视频解析接口...">
-<meta name="twitter:description" content="起因：无意中看到很久之前做的静态网页…
-
-经过：那个网页是个视频网页，我就想要不就用这个干脆做个后台吧。于是开始到网上搜视频解析网站看看，发现他们都是解析了视频后台传回源地址给浏览器的，一开始还以为解析接口里会有站长的会员cookie来着，结果碰了一鼻子灰，后来我就想，既然他的后台返回的是源地址，那我就直接伪造他前台的请求直接拿他解析的源地址好了…
-
-结果：http://www.jiexihu.c">
-  
-    <link rel="alternate" href="/atom.xml" title="NetsSsSs Blog" type="application/atom+xml">
-  
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0.css">
-  <link rel="stylesheet" href="/lib/fancybox/dist/jquery.fancybox.min.css">
-  <link rel="stylesheet" href="/css/main.css">
-  <script src="/lib/jquery/dist/jquery.min.js"></script>
-  
-  
-  
-  
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <!-- Baidu Push -->
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
 </head>
+
 <body>
-  <div id="wrapper">
-    <header id="header" class="clearfix">
-	<a id="logo" href="/" title="NetsSsSs Blog">NetsSsSs Blog</a>
-	
-		<p class="description">不应怠惰</p>
-	
-	<nav id="nav-menu" class="clearfix">
-		<form id="search" method="post" action="./" role="search">
-			<input id="search-input" type="text" name="s" class="inputbox" value="Search" onfocus="if (value =='Search'){value =''}" onblur="if (value ==''){value='Search'}">
-		</form>
-		<ul>
-      
-				
-        <li><a class="main-nav-link" href="/">Home</a></li>
-      
-				
-        <li><a class="main-nav-link" href="/archives">Archives</a></li>
-      
-		</ul>
-	</nav>
-</header>
-    <section id="main" class="clearfix"><article class="post-detail">
-  <h1 class="post-title"><a href="/">收集了一堆视频解析接口...</a></h1>
-  <ul class="post-meta">
-  <li><i class="fa fa-user"></i> Author NetsSsSs</li>
-  <li><i class="fa fa-calendar"></i> Date Oct 6</li>
-  <li><i class="fa fa-folder"></i> Categories
-  
-    no_categories
-  
-  </li>
-</ul>
-  <div class="post-content">
-      
-      <h4 id="起因："><a href="#起因：" class="headerlink" title="起因："></a>起因：</h4><p>无意中看到很久之前做的静态网页…</p>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 不应怠惰 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/img/avatar.jpg" />
+        </div>
+        <div class="name">
+            <i>NetsSsSs</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#起因："><span class="toc-text">起因：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#经过："><span class="toc-text">经过：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#结果："><span class="toc-text">结果：</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 不应怠惰 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        收集了一堆视频解析接口...
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2018-10-06 23:26:37</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#api" title="api">api</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <h4 id="起因："><a href="#起因：" class="headerlink" title="起因："></a>起因：</h4><p>无意中看到很久之前做的静态网页…</p>
 <hr>
 <h4 id="经过："><a href="#经过：" class="headerlink" title="经过："></a>经过：</h4><p>那个网页是个视频网页，我就想要不就用这个干脆做个后台吧。于是开始到网上搜视频解析网站看看，发现他们都是解析了视频后台传回源地址给浏览器的，一开始还以为解析接口里会有站长的会员cookie来着，结果碰了一鼻子灰，后来我就想，既然他的后台返回的是源地址，那我就直接伪造他前台的请求直接拿他解析的源地址好了…</p>
 <hr>
 <h4 id="结果："><a href="#结果：" class="headerlink" title="结果："></a>结果：</h4><p><a href="http://www.jiexihu.com/" target="_blank" rel="external">http://www.jiexihu.com/</a><br><a href="http://yun.baiyug.cn/vip/?url=" target="_blank" rel="external">http://yun.baiyug.cn/vip/?url=</a><br><a href="https://aip.hackmg.com/index.php?url=" target="_blank" rel="external">https://aip.hackmg.com/index.php?url=</a><br><a href="http://api.bbbbbb.me/jx/?url=" target="_blank" rel="external">http://api.bbbbbb.me/jx/?url=</a><br><a href="https://yun.jxegc.com/vip.php?url=" target="_blank" rel="external">https://yun.jxegc.com/vip.php?url=</a><br><a href="http://film.qq.com/film_index_prevue/index.html?firstVid=v0027v0lxjz" target="_blank" rel="external">http://film.qq.com/film_index_prevue/index.html?firstVid=v0027v0lxjz</a></p>
 
-  </div>
-  
-    <div class="tags">
-    <span><i class="fa fa-tags"></i> Tags</span>
-      
-        <ul class="post-tag-list"><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/api/">api</a></li></ul>
-      
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
     </div>
-  
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="/img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <div id="comment-container">
+        </div>
+    </div>
+</div>
+    </div>
+</div>
 
-</article>
 
-<!-- Comments -->
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+        <li>
+            <a target="_blank" href="https://www.zhihu.com/people/ting-feng-mu-yu-59">
+                            <span class="fa-stack fa-lg">
+                                 <i class="iconfont icon-zhihu"></i>
+                            </span>
+            </a>
+        </li>
+        
 
-<!-- End Comments --></section>
-    <footer id="footer" role="contentinfo">
-    <div>&copy; 2019 <a href="/">NetsSsSs Blog</a>.
-    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Designed by <a href="http://rainylog.com" target="_blank">Rainy.</a>
-	</div>
-</footer><!-- end #footer -->
+        
+        <li>
+            <a target="_blank" href="http://weibo.com/5022761699">
+                            <span class="fa-stack fa-lg">
+                                  <i class="iconfont icon-weibo"></i>
+                            </span>
+            </a>
+        </li>
+        
 
-  </div>
-  <script src="/lib/fancybox/dist/jquery.fancybox.min.js"></script>
+        
+        <li>
+            <a target="_blank" href="https://www.facebook.com/netsssss">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-facebook"></i>
+                            </span>
+            </a>
+        </li>
+        
 
-  <script src="/js/helper.js"></script>
-  <script src="/js/_third-party/gitment.js"></script>
+        
+        <li>
+            <a target="_blank"  href="https://github.com/netsssss">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a href="http://www.baidu.com">baidu</a></span>
+        <span>/</span>
+        
+        <span><a href="http://www.bilibili.com/">bilibili</a></span>
+        <span>/</span>
+        
+        <span><a href="https://fanyi.baidu.com">fanyi</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
 </body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script src="/js/gitment.js"></script>
+<script>
+    var gitment = new Gitment({
+        id: '收集了一堆视频解析接口...',
+        owner: 'netsssss',
+        repo: 'netsssss.github.io',
+        oauth: {
+            client_id: 'b3dff31cb64aefc16b5c',
+            client_secret: '2ee483f0cb98833e3fd10bf56ecae4158e08a6e2',
+        },
+    })
+    gitment.render('comment-container')
+</script>
+
 </html>

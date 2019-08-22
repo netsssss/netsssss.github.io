@@ -1,78 +1,164 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  
-  <title>JPA中的Page与Pageable | NetsSsSs Blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="RequestPage是Pageable的实现PageImpl是Page的实现PageImpl(List content, Pageable pageable, long total)构造函数PageImpl。
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="baidu-site-verification" content="usMJoXhxQ3" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="NetsSsSs的博客">
+    <meta name="keyword"  content="腾讯">
+    <link rel="shortcut icon" href="/img/favicon.ico">
 
-Page是Spring Data提供的一个接口，该接口表示一部分数据的集合以及其相关的下一部分数据、数据总数等相关信息，通过该接口，我们可以得到数据的总体信息（数据总数、总页数…）以及当">
-<meta property="og:type" content="article">
-<meta property="og:title" content="JPA中的Page与Pageable">
-<meta property="og:url" content="http://yoursite.com/2018/11/09/JPA中的Page与Pageable/index.html">
-<meta property="og:site_name" content="NetsSsSs Blog">
-<meta property="og:description" content="RequestPage是Pageable的实现PageImpl是Page的实现PageImpl(List content, Pageable pageable, long total)构造函数PageImpl。
+    <title>
+        
+        JPA中的Page与Pageable - Ns Blog
+        
+    </title>
 
-Page是Spring Data提供的一个接口，该接口表示一部分数据的集合以及其相关的下一部分数据、数据总数等相关信息，通过该接口，我们可以得到数据的总体信息（数据总数、总页数…）以及当">
-<meta property="og:updated_time" content="2018-11-09T12:04:16.141Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JPA中的Page与Pageable">
-<meta name="twitter:description" content="RequestPage是Pageable的实现PageImpl是Page的实现PageImpl(List content, Pageable pageable, long total)构造函数PageImpl。
-
-Page是Spring Data提供的一个接口，该接口表示一部分数据的集合以及其相关的下一部分数据、数据总数等相关信息，通过该接口，我们可以得到数据的总体信息（数据总数、总页数…）以及当">
-  
-    <link rel="alternate" href="/atom.xml" title="NetsSsSs Blog" type="application/atom+xml">
-  
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0.css">
-  <link rel="stylesheet" href="/lib/fancybox/dist/jquery.fancybox.min.css">
-  <link rel="stylesheet" href="/css/main.css">
-  <script src="/lib/jquery/dist/jquery.min.js"></script>
-  
-  
-  
-  
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <!-- Baidu Push -->
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
 </head>
+
 <body>
-  <div id="wrapper">
-    <header id="header" class="clearfix">
-	<a id="logo" href="/" title="NetsSsSs Blog">NetsSsSs Blog</a>
-	
-		<p class="description">不应怠惰</p>
-	
-	<nav id="nav-menu" class="clearfix">
-		<form id="search" method="post" action="./" role="search">
-			<input id="search-input" type="text" name="s" class="inputbox" value="Search" onfocus="if (value =='Search'){value =''}" onblur="if (value ==''){value='Search'}">
-		</form>
-		<ul>
-      
-				
-        <li><a class="main-nav-link" href="/">Home</a></li>
-      
-				
-        <li><a class="main-nav-link" href="/archives">Archives</a></li>
-      
-		</ul>
-	</nav>
-</header>
-    <section id="main" class="clearfix"><article class="post-detail">
-  <h1 class="post-title"><a href="/">JPA中的Page与Pageable</a></h1>
-  <ul class="post-meta">
-  <li><i class="fa fa-user"></i> Author NetsSsSs</li>
-  <li><i class="fa fa-calendar"></i> Date Nov 9</li>
-  <li><i class="fa fa-folder"></i> Categories
-  
-    no_categories
-  
-  </li>
-</ul>
-  <div class="post-content">
-      
-      <h4 id="RequestPage是Pageable的实现"><a href="#RequestPage是Pageable的实现" class="headerlink" title="RequestPage是Pageable的实现"></a>RequestPage是Pageable的实现</h4><h4 id="PageImpl是Page的实现"><a href="#PageImpl是Page的实现" class="headerlink" title="PageImpl是Page的实现"></a>PageImpl<t>是Page<t>的实现</t></t></h4><p>PageImpl(List<t> content, Pageable pageable, long total)<br>构造函数PageImpl。</t></p>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 不应怠惰 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/img/avatar.jpg" />
+        </div>
+        <div class="name">
+            <i>NetsSsSs</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#RequestPage是Pageable的实现"><span class="toc-text">RequestPage是Pageable的实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#PageImpl是Page的实现"><span class="toc-text">PageImpl是Page的实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#一是分页的信息（page、size）"><span class="toc-text">一是分页的信息（page、size）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二是排序的信息。Spring-Data-Jpa提供了PageRequest的具体实现"><span class="toc-text">二是排序的信息。Spring Data Jpa提供了PageRequest的具体实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Pageable接口入下："><span class="toc-text">Pageable接口入下：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Page-接口如下"><span class="toc-text">Page  接口如下:</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 不应怠惰 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        JPA中的Page与Pageable
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2018-11-09 19:18:24</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#Spring" title="Spring">Spring</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#JAVA" title="JAVA">JAVA</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#JPA" title="JPA">JPA</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <h4 id="RequestPage是Pageable的实现"><a href="#RequestPage是Pageable的实现" class="headerlink" title="RequestPage是Pageable的实现"></a>RequestPage是Pageable的实现</h4><h4 id="PageImpl是Page的实现"><a href="#PageImpl是Page的实现" class="headerlink" title="PageImpl是Page的实现"></a>PageImpl<t>是Page<t>的实现</t></t></h4><p>PageImpl(List<t> content, Pageable pageable, long total)<br>构造函数PageImpl。</t></p>
 <hr>
 <p><b>Page</b>是Spring Data提供的一个接口，该接口表示一部分数据的集合以及其相关的下一部分数据、数据总数等相关信息，通过该接口，我们可以得到数据的总体信息（数据总数、总页数…）以及当前数据的信息（当前数据的集合、当前页数等）</p>
 <p><b>Pageable</b> 是Spring Data库中定义的一个接口，该接口是所有分页相关信息的一个抽象，通过该接口，我们可以得到和分页相关所有信息（例如pageNumber、pageSize等），这样，Jpa就能够通过pageable参数来得到一个带分页信息的Sql语句。</p>
@@ -81,31 +167,123 @@ Page是Spring Data提供的一个接口，该接口表示一部分数据的集�
 <h4 id="一是分页的信息（page、size）"><a href="#一是分页的信息（page、size）" class="headerlink" title="一是分页的信息（page、size）"></a>一是分页的信息（page、size）</h4><h4 id="二是排序的信息。Spring-Data-Jpa提供了PageRequest的具体实现"><a href="#二是排序的信息。Spring-Data-Jpa提供了PageRequest的具体实现" class="headerlink" title="二是排序的信息。Spring Data Jpa提供了PageRequest的具体实现"></a>二是排序的信息。Spring Data Jpa提供了PageRequest的具体实现</h4><hr>
 <h4 id="Pageable接口入下："><a href="#Pageable接口入下：" class="headerlink" title="Pageable接口入下："></a>Pageable接口入下：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 分页信息抽象接口</div><div class="line"> * </div><div class="line"> * @author Oliver Gierke</div><div class="line"> */</div><div class="line">public interface Pageable &#123;</div><div class="line"> </div><div class="line">	/**</div><div class="line">	 * 返回要返回的页面.</div><div class="line">	 * </div><div class="line">	 * @return the page to be returned.</div><div class="line">	 */</div><div class="line">	int getPageNumber();</div><div class="line"> </div><div class="line">	/**</div><div class="line">	 * 返回要返回的项目的数量。</div><div class="line">	 * </div><div class="line">	 * @return the number of items of that page</div><div class="line">	 */</div><div class="line">	int getPageSize();</div><div class="line"> </div><div class="line">	/**</div><div class="line">	 * 根据底层页面和页面大小返回偏移量。</div><div class="line">	 * </div><div class="line">	 * @return the offset to be taken</div><div class="line">	 */</div><div class="line">	int getOffset();</div><div class="line"> </div><div class="line">	/**</div><div class="line">	 * 返回排序参数。</div><div class="line">	 * </div><div class="line">	 * @return</div><div class="line">	 */</div><div class="line">	Sort getSort();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h4 id="Page-接口如下"><a href="#Page-接口如下" class="headerlink" title="Page  接口如下:"></a>Page  接口如下:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">public interface Page&lt;T&gt; extends Iterable&lt;T&gt; &#123;</div><div class="line"> </div><div class="line">    int getNumber();			//当前第几页   返回当前页的数目。总是非负的</div><div class="line"> </div><div class="line">    int getSize();				//返回当前页面的大小。</div><div class="line"> </div><div class="line">    int getTotalPages();         //返回分页总数。</div><div class="line"> </div><div class="line">    int getNumberOfElements();   //返回当前页上的元素数。</div><div class="line"> </div><div class="line">    long getTotalElements();    //返回元素总数。</div><div class="line"> </div><div class="line">    boolean hasPreviousPage();  //返回如果有上一页。</div><div class="line"> </div><div class="line">    boolean isFirstPage();      //返回当前页是否为第一页。</div><div class="line"> </div><div class="line">    boolean hasNextPage();      //返回如果有下一页。</div><div class="line"> </div><div class="line">    boolean isLastPage();       //返回当前页是否为最后一页。</div><div class="line"> </div><div class="line">    Iterator&lt;T&gt; iterator();</div><div class="line"> </div><div class="line">    List&lt;T&gt; getContent();     //将所有数据返回为List</div><div class="line"> </div><div class="line">    boolean hasContent();     //返回数据是否有内容。</div><div class="line"> </div><div class="line">    Sort getSort();          //返回页的排序参数。</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-  </div>
-  
-    <div class="tags">
-    <span><i class="fa fa-tags"></i> Tags</span>
-      
-        <ul class="post-tag-list"><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/JAVA/">JAVA</a></li><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/JPA/">JPA</a></li><li class="post-tag-list-item"><a class="post-tag-list-link" href="/tags/Spring/">Spring</a></li></ul>
-      
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
     </div>
-  
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="/img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <div id="comment-container">
+        </div>
+    </div>
+</div>
+    </div>
+</div>
 
-</article>
 
-<!-- Comments -->
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+        <li>
+            <a target="_blank" href="https://www.zhihu.com/people/ting-feng-mu-yu-59">
+                            <span class="fa-stack fa-lg">
+                                 <i class="iconfont icon-zhihu"></i>
+                            </span>
+            </a>
+        </li>
+        
 
-<!-- End Comments --></section>
-    <footer id="footer" role="contentinfo">
-    <div>&copy; 2019 <a href="/">NetsSsSs Blog</a>.
-    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Designed by <a href="http://rainylog.com" target="_blank">Rainy.</a>
-	</div>
-</footer><!-- end #footer -->
+        
+        <li>
+            <a target="_blank" href="http://weibo.com/5022761699">
+                            <span class="fa-stack fa-lg">
+                                  <i class="iconfont icon-weibo"></i>
+                            </span>
+            </a>
+        </li>
+        
 
-  </div>
-  <script src="/lib/fancybox/dist/jquery.fancybox.min.js"></script>
+        
+        <li>
+            <a target="_blank" href="https://www.facebook.com/netsssss">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-facebook"></i>
+                            </span>
+            </a>
+        </li>
+        
 
-  <script src="/js/helper.js"></script>
-  <script src="/js/_third-party/gitment.js"></script>
+        
+        <li>
+            <a target="_blank"  href="https://github.com/netsssss">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a href="http://www.baidu.com">baidu</a></span>
+        <span>/</span>
+        
+        <span><a href="http://www.bilibili.com/">bilibili</a></span>
+        <span>/</span>
+        
+        <span><a href="https://fanyi.baidu.com">fanyi</a></span>
+        <span>/</span>
+        
+    </p>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
 </body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script src="/js/gitment.js"></script>
+<script>
+    var gitment = new Gitment({
+        id: 'JPA中的Page与Pageable',
+        owner: 'netsssss',
+        repo: 'netsssss.github.io',
+        oauth: {
+            client_id: 'b3dff31cb64aefc16b5c',
+            client_secret: '2ee483f0cb98833e3fd10bf56ecae4158e08a6e2',
+        },
+    })
+    gitment.render('comment-container')
+</script>
+
 </html>
