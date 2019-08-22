@@ -1,674 +1,281 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="zh">
+<html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<meta name="theme-color" content="#222">
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
-
-
-
-
-
-  <meta name="keywords" content="python,BeautifulSoup," />
-
-
-
-
-
-
-
-
-
-
-<meta name="description" content="新手嘛，爬虫当然是最简单最容易学的吧~我是这么以为的，学了两天，做了这么个东西~网上的都比较喜欢爬这个小说网站http://www.biqugecom.com/ ,试一下咯~12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061">
-<meta property="og:type" content="article">
-<meta property="og:title" content="python爬虫的简单实现">
-<meta property="og:url" content="http://yoursite.com/2018/09/07/python爬虫的简单实现/index.html">
-<meta property="og:site_name" content="NetsSsSs Blog">
-<meta property="og:description" content="新手嘛，爬虫当然是最简单最容易学的吧~我是这么以为的，学了两天，做了这么个东西~网上的都比较喜欢爬这个小说网站http://www.biqugecom.com/ ,试一下咯~12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061">
-<meta property="og:image" content="https://user-images.githubusercontent.com/33678058/45262625-d8a4e700-b44c-11e8-8641-5cca539f6d2e.jpg">
-<meta property="og:updated_time" content="2018-09-09T08:25:08.228Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python爬虫的简单实现">
-<meta name="twitter:description" content="新手嘛，爬虫当然是最简单最容易学的吧~我是这么以为的，学了两天，做了这么个东西~网上的都比较喜欢爬这个小说网站http://www.biqugecom.com/ ,试一下咯~12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061">
-<meta name="twitter:image" content="https://user-images.githubusercontent.com/33678058/45262625-d8a4e700-b44c-11e8-8641-5cca539f6d2e.jpg">
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-
-  <link rel="canonical" href="http://yoursite.com/2018/09/07/python爬虫的简单实现/"/>
-
-
-
-
-
-  <title>python爬虫的简单实现 | NetsSsSs Blog</title>
-  
-
-
-
-
-
-
-
-
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="baidu-site-verification" content="usMJoXhxQ3" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="NetsSsSs的博客">
+    <meta name="keyword"  content="腾讯">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        python爬虫的简单实现 - Ns Blog
+        
+    </title>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/aircloud.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <!-- Baidu Push -->
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh">
+<body>
 
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">NetsSsSs Blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-      
-        <p class="site-subtitle">不应怠惰</p>
-      
-  </div>
-
-  <div class="site-nav-toggle">
+<div class="site-nav-toggle" id="site-nav-toggle">
     <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
     </button>
-  </div>
 </div>
 
-<nav class="site-nav">
-  
+<div class="index-about">
+    <i> 不应怠惰 </i>
+</div>
 
-  
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            Home
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            About
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            Tags
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            Archives
-          </a>
-        </li>
-      
-
-      
-    </ul>
-  
-
-  
-</nav>
-
-
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
+<div class="index-container">
     
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/07/python爬虫的简单实现/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="NetsSsSs">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="NetsSsSs Blog">
-    </span>
-
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar">
+            <img src="/img/avatar.jpg" />
+        </div>
+        <div class="name">
+            <i>NetsSsSs</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
     
-      <header class="post-header">
+        <div id="toc" class="toc-article">
+    
+</div>
+    
+</div>
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">python爬虫的简单实现</h1>
-        
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-09-07T14:29:57+08:00">
-                2018-09-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
 
         </div>
-      </header>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 不应怠惰 </i>
+        </div>
+    </div>
     
+    <div class="index-middle">
+        <!-- Main Content -->
+        
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
 
-      
-      
+<div class="post-container">
+    <div class="post-title">
+        python爬虫的简单实现
+    </div>
 
-      
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2018-09-07 14:29:57</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#python" title="python">python</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#BeautifulSoup" title="BeautifulSoup">BeautifulSoup</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
         <p>新手嘛，爬虫当然是最简单最容易学的吧~我是这么以为的，学了两天，做了这么个东西~<br>网上的都比较喜欢爬这个小说网站<a href="http://www.biqugecom.com/" target="_blank" rel="external">http://www.biqugecom.com/</a> ,试一下咯~<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div></pre></td><td class="code"><pre><div class="line">from bs4 import BeautifulSoup</div><div class="line">import re</div><div class="line">import requests</div><div class="line">import sys</div><div class="line">import time</div><div class="line">import random</div><div class="line">#目前有效20180907</div><div class="line">#先在D盘建一个叫aaa的文件夹</div><div class="line"></div><div class="line">#全局变量</div><div class="line">yuanshiurl = &apos;http://www.biqugecom.com/1/&apos;#原始url</div><div class="line">xinurl = &apos;&apos;#新url</div><div class="line">soupshuming = &apos;&apos;#小说名字</div><div class="line">soupnext = &apos;&apos;#下一章地址</div><div class="line">openshuhao = &apos;13503&apos;#书号</div><div class="line">zhangshu = 1#章数</div><div class="line"></div><div class="line">#交互</div><div class="line">print(&apos;请输入想要下载的小说的书号：&apos;)</div><div class="line">openshuhao = input()</div><div class="line">if openshuhao == &apos;&apos;:</div><div class="line">     print(&apos;未检测到书号，系统将随机抽取&apos;)</div><div class="line">     openshuhao = str(random.randint(1,15000))</div><div class="line">     #openshuhao = str(&apos;13503&apos;)</div><div class="line">print(&apos;下载书号：&apos;+str(openshuhao))</div><div class="line">print(&apos;即将开始下载,请耐心等待...&apos;)</div><div class="line"></div><div class="line">#初始化方法</div><div class="line">def chushihua(shuhao):</div><div class="line">     global soupnext</div><div class="line">     global soupshuming</div><div class="line">     global openshuhao</div><div class="line">     global zhangshu</div><div class="line">     url = yuanshiurl+str(shuhao)+&apos;/&apos;</div><div class="line">     r = requests.get(url)</div><div class="line">     r.encoding = &apos;gbk&apos;</div><div class="line">     soup = BeautifulSoup(r.text,&apos;html.parser&apos;)</div><div class="line">     soupshuming = soup.select(&apos;#info h1&apos;)[0].text#小说名字</div><div class="line">     soupzuozhe = soup.select(&apos;#info p&apos;)[0].text#作者名字</div><div class="line">     soupzuihougengxin = soup.select(&apos;#info p&apos;)[2].text#最后更新时间</div><div class="line">     soupjianjie = soup.select(&apos;#intro&apos;)[0].text#最后更新时间</div><div class="line">     soupzhengwen = soup.select(&apos;dd&apos;)[9].next_siblings</div><div class="line">     soupz = &apos;&apos;</div><div class="line">     for zs in soupzhengwen:</div><div class="line">          soupz +=str(zs)</div><div class="line">     soupzw = BeautifulSoup(soupz,&apos;html.parser&apos;)</div><div class="line">     zhangshu = len(soupzw.select(&apos;dd a&apos;))</div><div class="line">     #写入txt</div><div class="line">     f = open(&apos;D:\\aaa\\&apos;+soupshuming+&apos;.txt&apos;,&apos;ab+&apos;)</div><div class="line">     f.write((str(soupshuming) + &apos;\r\n&apos;).encode(&apos;UTF-8&apos;))</div><div class="line">     f.write((str(soupzuozhe) + &apos;\r\n&apos;).encode(&apos;UTF-8&apos;))</div><div class="line">     f.write((str(soupzuihougengxin) + &apos;\r\n&apos;).encode(&apos;UTF-8&apos;))</div><div class="line">     f.write((&apos;****简介****\r\n&apos;).encode(&apos;UTF-8&apos;))</div><div class="line">     f.write((str(soupjianjie) + &apos;\r\n&apos;).encode(&apos;UTF-8&apos;))</div><div class="line">     f.write((&apos;*************\r\n\r\n&apos;).encode(&apos;UTF-8&apos;))</div><div class="line">     f.close()</div><div class="line">     soupnext = soup.select(&apos;dd a&apos;)[9][&apos;href&apos;].split(&apos;/&apos;)[3]#第一章地址</div><div class="line">     print(&apos;开始下载：&apos;+soupshuming)</div><div class="line">     print(&apos;总章数：&apos;+str(zhangshu))</div><div class="line">     print(&apos;简介：&apos;+str(soupjianjie))</div><div class="line">chushihua(openshuhao)</div><div class="line"></div><div class="line">#单章下载方法</div><div class="line">def downloadxs():</div><div class="line">     global soupnext</div><div class="line">     r =  requests.get(xinurl)</div><div class="line">     r.encoding = &apos;gbk&apos;</div><div class="line">     soup = BeautifulSoup(r.text,&apos;html.parser&apos;)</div><div class="line">     soupname = soup.select(&apos;.bookname h1&apos;)[0].text#章节名称</div><div class="line">     souptext = soup.select(&apos;#content&apos;)[0]#章节内容</div><div class="line">     for ss in souptext.select(&quot;script&quot;):</div><div class="line">          ss.decompose()</div><div class="line">     for ss in souptext.select(&quot;a&quot;):</div><div class="line">          ss.decompose()</div><div class="line">     #soupnext = soup.select(&apos;#pager_next&apos;)[0][&apos;href&apos;]#下一章地址</div><div class="line">     soupnext = soup.select(&apos;.bottem1 a&apos;)[2][&apos;href&apos;]#下一章地址</div><div class="line">     souptext = re.sub(&apos;\s+&apos; ,&apos;\r\n\t&apos;, souptext.text).strip(&apos;\r\n&apos;)</div><div class="line">     f = open(&apos;D:\\aaa\\&apos;+soupshuming+&apos;.txt&apos;,&apos;ab+&apos;)</div><div class="line">     f.write((str(soupname) + &apos;\r\n&apos;).encode(&apos;UTF-8&apos;))</div><div class="line">     f.write((str(souptext) + &apos;\r\n&apos;).encode(&apos;UTF-8&apos;))</div><div class="line">     f.close()</div><div class="line"></div><div class="line">#拼接url方法</div><div class="line">def pinjieurl(shuhao):</div><div class="line">     global xinurl</div><div class="line">     xinurl = yuanshiurl+str(shuhao)+&apos;/&apos;+str(soupnext)</div><div class="line">pinjieurl(openshuhao)</div><div class="line"></div><div class="line">#下载</div><div class="line">def main():</div><div class="line">     for i in range(zhangshu):</div><div class="line">          pinjieurl(openshuhao)</div><div class="line">          downloadxs()</div><div class="line">          time.sleep(0.5)</div><div class="line">          print(&apos;\r下载中：&apos;+str(round(((100/zhangshu)*i),2))+&apos;%，已下载：&apos;+str(i+1)+&apos;章&apos;, end=&apos;&apos;)</div><div class="line">          sys.stdout.flush()</div><div class="line">main()</div></pre></td></tr></table></figure></p>
 <p>辣鸡爬虫，只能爬这一个网站，不过原理都是相同的吧（雾）。</p>
 <p><img src="https://user-images.githubusercontent.com/33678058/45262625-d8a4e700-b44c-11e8-8641-5cca539f6d2e.jpg" alt=""></p>
 
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/python/" rel="tag"># python</a>
-          
-            <a href="/tags/BeautifulSoup/" rel="tag"># BeautifulSoup</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/09/06/第一篇博客/" rel="next" title="第一篇博客">
-                <i class="fa fa-chevron-left"></i> 第一篇博客
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/07/for循环中i++和++i的区别/" rel="prev" title="for循环中i++和++i的区别">
-                for循环中i++和++i的区别 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-
-  
-
-
-
-        </div>
         
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">赞赏</button>
     </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">NetsSsSs</p>
-              <p class="site-description motion-element" itemprop="description">NetsSsSs的博客</p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/">
-              
-                  <span class="site-state-item-count">18</span>
-                  <span class="site-state-item-name">posts</span>
-                </a>
-              </div>
-            
-
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">20</span>
-                  <span class="site-state-item-name">tags</span>
-                </a>
-              </div>
-            
-
-          </nav>
-
-          
-
-          
-
-          
-          
-
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-
-      
-
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="/img/donate.jpg">
+        <p> 感谢鼓励 </p>
     </div>
-  </aside>
-
-
+</div>
         
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">NetsSsSs</span>
-
-  
+        <div id="comment-container">
+        </div>
+    </div>
+</div>
+    </div>
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+        <li>
+            <a target="_blank" href="https://www.zhihu.com/people/ting-feng-mu-yu-59">
+                            <span class="fa-stack fa-lg">
+                                 <i class="iconfont icon-zhihu"></i>
+                            </span>
+            </a>
+        </li>
+        
 
+        
+        <li>
+            <a target="_blank" href="http://weibo.com/5022761699">
+                            <span class="fa-stack fa-lg">
+                                  <i class="iconfont icon-weibo"></i>
+                            </span>
+            </a>
+        </li>
+        
 
+        
+        <li>
+            <a target="_blank" href="https://www.facebook.com/netsssss">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-facebook"></i>
+                            </span>
+            </a>
+        </li>
+        
 
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
-
-
-
+        
+        <li>
+            <a target="_blank"  href="https://github.com/netsssss">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
 
         
 
-
-
-
-
-
-
+    </ul>
+    
+    <p>
+        <span>/</span>
         
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
+        <span><a href="http://www.baidu.com">baidu</a></span>
+        <span>/</span>
         
-      </div>
+        <span><a href="http://www.bilibili.com/">bilibili</a></span>
+        <span>/</span>
+        
+        <span><a href="https://fanyi.baidu.com">fanyi</a></span>
+        <span>/</span>
+        
+    </p>
     
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
 
-    
 
-  </div>
 
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
-
-
-
-  
-
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
 
 </body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script src="/js/gitment.js"></script>
+<script>
+    var gitment = new Gitment({
+        id: 'python爬虫的简单实现',
+        owner: 'netsssss',
+        repo: 'netsssss.github.io',
+        oauth: {
+            client_id: 'b3dff31cb64aefc16b5c',
+            client_secret: '2ee483f0cb98833e3fd10bf56ecae4158e08a6e2',
+        },
+    })
+    gitment.render('comment-container')
+</script>
+
 </html>
