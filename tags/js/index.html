@@ -1,516 +1,181 @@
 <!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>tag: js | NetsSsSs Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="NetsSsSs的博客">
+<meta property="og:type" content="website">
+<meta property="og:title" content="NetsSsSs Blog">
+<meta property="og:url" content="http://yoursite.com/tags/js/index.html">
+<meta property="og:site_name" content="NetsSsSs Blog">
+<meta property="og:description" content="NetsSsSs的博客">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="NetsSsSs Blog">
+<meta name="twitter:description" content="NetsSsSs的博客">
+  
+    <link rel="alternate" href="/atom.xml" title="NetsSsSs Blog" type="application/atom+xml">
+  
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0.css">
+  <link rel="stylesheet" href="/lib/fancybox/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <script src="/lib/jquery/dist/jquery.min.js"></script>
+  
+  
+  
+  
+</head>
+<body>
+  <div id="wrapper">
+    <header id="header" class="clearfix">
+	<a id="logo" href="/" title="NetsSsSs Blog">NetsSsSs Blog</a>
+	
+		<p class="description">不应怠惰</p>
+	
+	<nav id="nav-menu" class="clearfix">
+		<form id="search" method="post" action="./" role="search">
+			<input id="search-input" type="text" name="s" class="inputbox" value="搜索" onfocus="if (value =='搜索'){value =''}" onblur="if (value ==''){value='搜索'}">
+		</form>
+		<ul>
+      
+				
+        <li><a class="main-nav-link" href="/">主页</a></li>
+      
+				
+        <li><a class="main-nav-link" href="/archives">归档</a></li>
+      
+		</ul>
+	</nav>
+</header>
+    <section id="main" class="clearfix">
+  <article class="post-detail">
+    <h1 class="post-title"><a href="/">线性表的算法题</a></h1>
+    <ul class="post-meta">
+  <li><i class="fa fa-user"></i> 作者 NetsSsSs</li>
+  <li><i class="fa fa-calendar"></i> 日期 Sep 10</li>
+  <li><i class="fa fa-folder"></i> 分类
+  
+    no_categories
+  
+  </li>
+</ul>
+    <div class="post-content">
+      <h3 id="已知线性表A的长度为n，并且采用顺序存储结构。写一算法，删除线性表中所有值为x的元素。"><a href="#已知线性表A的长度为n，并且采用顺序存储结构。写一算法，删除线性表中所有值为x的元素。" class="headerlink" title="已知线性表A的长度为n，并且采用顺序存储结构。写一算法，删除线性表中所有值为x的元素。"></a>已知线性表A的长度为n，并且采用顺序存储结构。写一算法，删除线性表中所有值为x的元素。</h3><p>这道题的思路是这样的：<br>  1.用i循环遍历数组，直到遇到值为’x’的元素，将用来记录x个数的count加1，<br>  2.在这个时候用j从这个位置继续往后遍历，因为题目并没说明x是不连续的，所以用j遍历数组直到找到一个不是’x’的元素，<br>  3.将j位置的元素和i位置的元素调换位置，也就是把发现的x和后面的第一个非x元素的位置调换一下，这个时候因为算法的原因count记录的个数比原数组中’x’的个数多了一些，多的这些就是调换位置之后再次被i遍历到的’x’，所以应该在发生调换的时候令count减1，这样count就会记录真实的’x’的个数，<br>  4.继续遍历数组，重复2、3的过程直到i遍历结束，<br>  5.遍历结束后’x’将全部移动到数组末尾，所以只需要将原数组的长度减少count就可以删除数组中全部的’x’。</p>
+<hr>
+<p>  人家本来让用伪C语言写，但是我刚好在写js所以就用js写了，里面用的方法什么的伪C语言里面也都有，所以应该差不多吧…<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">    var e = [&apos;1&apos;,&apos;2&apos;,&apos;x&apos;,&apos;x&apos;,&apos;3&apos;,&apos;4&apos;,&apos;5&apos;,&apos;x&apos;,&apos;6&apos;,&apos;x&apos;,&apos;x&apos;,&apos;x&apos;,&apos;7&apos;,&apos;8&apos;,&apos;9&apos;,&apos;0&apos;];  //假定的原始数组</div><div class="line">    var n = e.length;                                                           //数组的长度n = 16</div><div class="line">    var i,j,temp;                                                                  //循环中用到的变量和中间值</div><div class="line">    var count = 0;                                                               //统计&apos;x&apos;的个数</div><div class="line">    for(i = 0; i&lt;=n-1; i++)&#123;                                                   //首层for循环遍历e中所有元素</div><div class="line">      if(e[i] == &apos;x&apos;)&#123;                                                               //当e[i]等于&apos;x&apos;时记录此时i的位置，改用j继续遍历知道遇到非&apos;x&apos;的值为止</div><div class="line">        for(j = i; j&lt;=n-1; j++)&#123;                                                //用j从i的位置继续遍历数组</div><div class="line">          if(e[j] != &apos;x&apos;)&#123;                                                            //当e[j]不等于&apos;x&apos;时，记录j的位置判断是否已经遍历结束，如果没有结束则将e[j]位置的非&apos;x&apos;值与e[i]位置的&apos;x&apos;调换位置</div><div class="line">            if(j&lt;n)&#123;                                                                  //...不想写了...</div><div class="line">              temp = e[i];</div><div class="line">              e[i] = e[j];</div><div class="line">              e[j] = temp;</div><div class="line">              count = count - 1;</div><div class="line">              break;</div><div class="line">            &#125;else if (j==n) &#123;</div><div class="line">              break;</div><div class="line">            &#125;</div><div class="line">          &#125;</div><div class="line">        &#125;</div><div class="line">        count = count + 1;</div><div class="line">      &#125;</div><div class="line">      console.log(&apos;e=&apos;,e);</div><div class="line">    &#125;</div><div class="line">    console.log(&apos;count=&apos;,count);</div><div class="line">    e.length -= count;</div><div class="line">    console.log(&apos;new e=&apos;,e);</div><div class="line">  &lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<p>输出结果如下：<br><img src="http://wx2.sinaimg.cn/large/005tUZLtly1fv4diziw1gj30mf0b3q47.jpg" alt="输出结果"></p>
+
+    </div>
+  </article>
+
+  <article class="post-detail">
+    <h1 class="post-title"><a href="/">for循环中i++和++i的区别</a></h1>
+    <ul class="post-meta">
+  <li><i class="fa fa-user"></i> 作者 NetsSsSs</li>
+  <li><i class="fa fa-calendar"></i> 日期 Sep 7</li>
+  <li><i class="fa fa-folder"></i> 分类
+  
+    no_categories
+  
+  </li>
+</ul>
+    <div class="post-content">
+      
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
-    <meta name="baidu-site-verification" content="usMJoXhxQ3" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="NetsSsSs的博客">
-    <meta name="keyword"  content="腾讯">
-    <link rel="shortcut icon" href="/img/favicon.ico">
-
-    <title>
-        
-        Ns Blog
-        
-    </title>
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/aircloud.css">
-    <link rel="stylesheet" href="/css/gitment.css">
-    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
-    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
-    <!-- ga & ba script hoook -->
-    <!-- Baidu Push -->
-    <script>
-        (function(){
-            var bp = document.createElement('script');
-            var curProtocol = window.location.protocol.split(':')[0];
-            if (curProtocol === 'https') {
-                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-            }
-            else {
-                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-            }
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(bp, s);
-        })();
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
 </head>
-
 <body>
+  <div>
+    <p>顺便尝试html能否写在博客内</p>
+    <h3>(输出结果在控制台)</h3>
+    <p>---------------------------------------</p>
+    <p>在for中第三个元素中使用时效果————完全一样~</p>
+    <p>i++和++i在独立使用时效果是完全一样的</p>
+    <p>本来是想验证某线性表的结果</p>
+    <p>输出大概长这样：</p>
+    <pre>
+      i is : 5
+      i is : 4
+      i is : 3
+      i is : 2
+      i2 is : 5
+      i2 is : 4
+      i2 is : 3
+      i2 is : 2
+      length is : 7
+      l is : Array(10)
+        0: 1
+        1: 2
+        2: 9
+        3: 3
+        4: 3
+        5: 4
+        6: 5
+        length: 10
+        __proto__: Array(0)</pre>
+  </div>
+    <p>js长这样：</p>
+  <script>
 
-<div class="site-nav-toggle" id="site-nav-toggle">
-    <button>
-        <span class="btn-bar"></span>
-        <span class="btn-bar"></span>
-        <span class="btn-bar"></span>
-    </button>
-</div>
+  var ll=new Array(10);
+  ll[0]=1
+  ll[1]=2
+  ll[2]=3
+  ll[3]=4
+  ll[4]=5
+  ll[5]=6
+  length = 6;
 
-<div class="index-about">
-    <i> 不应怠惰 </i>
-</div>
+  function insert(l){
+    var p,i,i2;
+    p = 2;
+    for(i = length-1; i>=p; --i){
+      l[i+1]=l[i];
+      console.log("i is :",i);
+    }
+    for(i2 = length-1; i2>=p; i2--){
+      l[i2+1]=l[i2];
+      console.log("i2 is :",i2);
+    }
+    l[p]=9;
+    length = length +1;
+    console.log("length is :",length);
+    console.log("l is :",l);
+  }
 
-<div class="index-container">
-    
-    <div class="index-left">
-        
-<div class="nav" id="nav">
-    <div class="avatar-name">
-        <div class="avatar">
-            <img src="/img/avatar.jpg" />
-        </div>
-        <div class="name">
-            <i>NetsSsSs</i>
-        </div>
-    </div>
-    <div class="contents" id="nav-content">
-        <ul>
-            <li >
-                <a href="/">
-                    <i class="iconfont icon-shouye1"></i>
-                    <span>主页</span>
-                </a>
-            </li>
-            <li  class=active >
-                <a href="/tags">
-                    <i class="iconfont icon-biaoqian1"></i>
-                    <span>标签</span>
-                </a>
-            </li>
-            <li >
-                <a href="/archives">
-                    <i class="iconfont icon-guidang2"></i>
-                    <span>存档</span>
-                </a>
-            </li>
-            <li >
-                <a href="/about/">
-                    <i class="iconfont icon-guanyu2"></i>
-                    <span>关于</span>
-                </a>
-            </li>
-            
-            <li>
-                <a id="search">
-                    <i class="iconfont icon-sousuo1"></i>
-                    <span>搜索</span>
-                </a>
-            </li>
-            
-        </ul>
-    </div>
-    
-</div>
-
-
-<div class="search-field" id="search-field">
-    <div class="search-container">
-        <div class="search-input">
-            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
-            <input id="search-input"/>
-            <span id="begin-search">搜索</span>
-        </div>
-        <div class="search-result-container" id="search-result-container">
-
-        </div>
-    </div>
-</div>
-        <div class="index-about-mobile">
-            <i> 不应怠惰 </i>
-        </div>
-    </div>
-    
-    <div class="index-middle">
-        <!-- Main Content -->
-        
-
-
-<!-- 归档列表 -->
-
-<div class="archives-container">
-
-<div class="one-tag-list">
-                <span class="fa fa-calendar-times-o listing-seperator" id="2019">
-                    <span class="tag-text">2019</span>
-                </span>
-    <ul>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>08-20</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2019/08/20/vscode插件开发笔记/">
-                        <span>
-                            vscode插件开发笔记
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>08-18</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2019/08/18/css编入集/">
-                        <span>
-                            css编入集
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>06-27</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2019/06/27/温故而知新/">
-                        <span>
-                            温故而知新
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>06-27</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2019/06/27/状态码解释/">
-                        <span>
-                            状态码解释
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-
-    </ul>
-</div>
-
-<div class="one-tag-list">
-                <span class="fa fa-calendar-times-o listing-seperator" id="2018">
-                    <span class="tag-text">2018</span>
-                </span>
-    <ul>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>11-10</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2018/11/10/ie和chrome显示图片清晰度不一致的解决办法/">
-                        <span>
-                            ie和chrome显示图片清晰度不一致的解决办法
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>11-10</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2018/11/10/关于前后端同构/">
-                        <span>
-                            关于前后端同构
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>11-09</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2018/11/09/git小课堂/">
-                        <span>
-                            git小课堂
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>11-09</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2018/11/09/Nginx小课堂/">
-                        <span>
-                            Nginx小课堂
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>11-09</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2018/11/09/List中add()与addAll()的区别/">
-                        <span>
-                            List中add与addAll的区别
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>11-09</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2018/11/09/JPA中的Page与Pageable/">
-                        <span>
-                            JPA中的Page与Pageable
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>10-06</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2018/10/06/收集了一堆视频解析接口/">
-                        <span>
-                            收集了一堆视频解析接口...
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>10-06</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2018/10/06/在vue中使用base64解码获得服务器端jwt加密的payload/">
-                        <span>
-                            在Vue中使用Base64解码获得服务器端jwt加密的payload
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>09-10</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2018/09/10/(闲的无聊的分享)_科学上网/">
-                        <span>
-                            (闲的无聊的分享) 科学上网
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>09-10</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2018/09/10/线性表的算法题/">
-                        <span>
-                            线性表的算法题
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>09-08</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2018/09/08/python的一些知识点总结/">
-                        <span>
-                            python的一些知识点总结
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>09-07</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2018/09/07/for循环中i++和++i的区别/">
-                        <span>
-                            for循环中i++和++i的区别
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>09-07</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2018/09/07/python爬虫的简单实现/">
-                        <span>
-                            python爬虫的简单实现
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-        <!-- <li class="listing-item">
-        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        </li> -->
-        <li >
-            <span>09-06</span>
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/2018/09/06/第一篇博客/">
-                        <span>
-                            第一篇博客
-                        </span>
-            </a>
-            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-        </li>
-        
-
-    </ul>
-</div>
-
-</div>
-    </div>
-</div>
-
-
-<footer class="footer">
-    <ul class="list-inline text-center">
-        
-        
-        <li>
-            <a target="_blank" href="https://www.zhihu.com/people/ting-feng-mu-yu-59">
-                            <span class="fa-stack fa-lg">
-                                 <i class="iconfont icon-zhihu"></i>
-                            </span>
-            </a>
-        </li>
-        
-
-        
-        <li>
-            <a target="_blank" href="http://weibo.com/5022761699">
-                            <span class="fa-stack fa-lg">
-                                  <i class="iconfont icon-weibo"></i>
-                            </span>
-            </a>
-        </li>
-        
-
-        
-        <li>
-            <a target="_blank" href="https://www.facebook.com/netsssss">
-                            <span class="fa-stack fa-lg">
-                                <i class="iconfont icon-facebook"></i>
-                            </span>
-            </a>
-        </li>
-        
-
-        
-        <li>
-            <a target="_blank"  href="https://github.com/netsssss">
-                            <span class="fa-stack fa-lg">
-                                <i class="iconfont icon-github"></i>
-                            </span>
-            </a>
-        </li>
-        
-
-        
-
-    </ul>
-    
-    <p>
-        <span>/</span>
-        
-        <span><a href="http://www.baidu.com">baidu</a></span>
-        <span>/</span>
-        
-        <span><a href="http://www.bilibili.com/">bilibili</a></span>
-        <span>/</span>
-        
-        <span><a href="https://fanyi.baidu.com">fanyi</a></span>
-        <span>/</span>
-        
-    </p>
-    
-    <p>
-        <span id="busuanzi_container_site_pv">
-            <span id="busuanzi_value_site_pv"></span>PV
-        </span>
-        <span id="busuanzi_container_site_uv">
-            <span id="busuanzi_value_site_uv"></span>UV
-        </span>
-        Created By <a href="https://hexo.io/">Hexo</a>  Theme <a href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
-</footer>
-
-
-
-
+  insert(ll);
+  </script>
 </body>
+</html>
 
-<script>
-    // We expose some of the variables needed by the front end
-    window.hexo_search_path = "search.json"
-    window.hexo_root = "/"
-    window.isPost = false
-</script>
-<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">/*</div><div class="line">var ll=new Array(10);</div><div class="line">ll[0]=1</div><div class="line">ll[1]=2</div><div class="line">ll[2]=3</div><div class="line">ll[3]=4</div><div class="line">ll[4]=5</div><div class="line">ll[5]=6</div><div class="line">length = 6;</div><div class="line"></div><div class="line">function insert(l)&#123;</div><div class="line">  var p,i,i2;</div><div class="line">  p = 2;</div><div class="line">  for(i = length-1; i&gt;=p; --i)&#123;</div><div class="line">    l[i+1]=l[i];</div><div class="line">    console.log(&quot;i is :&quot;,i);</div><div class="line">  &#125;</div><div class="line">  for(i2 = length-1; i2&gt;=p; i2--)&#123;</div><div class="line">    l[i2+1]=l[i2];</div><div class="line">    console.log(&quot;i2 is :&quot;,i2);</div><div class="line">  &#125;</div><div class="line">  l[p]=9;</div><div class="line">  length = length +1;</div><div class="line">  console.log(&quot;length is :&quot;,length);</div><div class="line">  console.log(&quot;l is :&quot;,l);</div><div class="line">&#125;</div><div class="line"></div><div class="line">insert(ll);</div><div class="line">*/</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
 
+
+    </div>
+  </article>
+
+
+</section>
+    <footer id="footer" role="contentinfo">
+    <div>&copy; 2019 <a href="/">NetsSsSs Blog</a>.
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Designed by <a href="http://rainylog.com" target="_blank">Rainy.</a>
+	</div>
+</footer><!-- end #footer -->
+
+  </div>
+  <script src="/lib/fancybox/dist/jquery.fancybox.min.js"></script>
+
+  <script src="/js/helper.js"></script>
+  <script src="/js/_third-party/gitment.js"></script>
+</body>
 </html>
