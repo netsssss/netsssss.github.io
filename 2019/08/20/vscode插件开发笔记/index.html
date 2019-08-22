@@ -160,35 +160,7 @@
 <p>开发vscode插件其实就是在写node，只是在需要与编辑器交互的时候，调用以下vscode提供的事件回调</p>
 </blockquote>
 </li>
-<li>常用回调事件：</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th>事件</th>
-<th>解释</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>vscode.commands.registerCommand</td>
-<td>接收到命令时</td>
-</tr>
-<tr>
-<td>vscode.commands.registerTextEditorCommand</td>
-<td>在编辑器界面接收到命令时</td>
-</tr>
-<tr>
-<td>vscode.workspace.onDidChangeTextDocument</td>
-<td>工作区文档改变时</td>
-</tr>
-<tr>
-<td>vscode.workspace.onDidSaveTextDocument</td>
-<td>工作区文档保存时</td>
-</tr>
-</tbody>
-</table>
-<ol>
+<li>常用回调事件：<br><table><thead><tr><th>事件</th><th>解释</th></tr></thead><tbody><tr><td>vscode.commands.registerCommand</td><td>接收到命令时</td></tr><tr><td>vscode.commands.registerTextEditorCommand</td><td>在编辑器界面接收到命令时</td></tr><tr><td>vscode.workspace.onDidChangeTextDocument</td><td>工作区文档改变时</td></tr><tr><td>vscode.workspace.onDidSaveTextDocument</td><td>工作区文档保存时</td></tr></tbody></table></li>
 <li><p>写法：</p>
 <ol>
 <li>官方推荐使用<code>yo code</code>自动构建项目框架，构建完成后再debug页面点击开始按钮即可调试示例插件</li>
@@ -214,7 +186,6 @@
 </li>
 <li>当遇到在百度中难以查到的问题时，比如<code>vscode command &#39;xxx&#39; not found</code>时，应该是自己的操作有问题，尝试使用菜单栏的<code>帮助-&gt;切换开发人员工具</code>来查看错误原因</li>
 <li>插件开发时可以直接require(‘vscode’)，不需要npm安装</li>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;!-- key|value</div><div class="line">:-|:-</div><div class="line">name|插件的名字</div><div class="line">engines|插件支持的最低vscode版本</div><div class="line">activationEvents|何时启动插件(可以写&quot;*&quot;)</div><div class="line">contributes|注册指令 --&gt;</div></pre></td></tr></table></figure></li>
 </ol>
 </li>
 </ol>
