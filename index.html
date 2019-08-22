@@ -365,12 +365,12 @@
 </ol>
 </li>
 </ol>
-<pre><code>key|value
-:-|:-
-name|插件的名字
-engines|插件支持的最低vscode版本
-activationEvents|何时启动插件(可以写&quot;*&quot;)
-contributes|注册指令
+<pre><code>  key|value
+  :-|:-
+  name|插件的名字
+  engines|插件支持的最低vscode版本
+  activationEvents|何时启动插件(可以写&quot;*&quot;)
+  contributes|注册指令
 
 2. extension.js中应该暴露两个出口，分别是activate和deactivate，代表插件开始运行和插件释放，所有注册类指令都需要push在activate中的context.subscriptions中
 3. .vscode/launch.json中应该写入：
