@@ -104,7 +104,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-首先理解vue的render函数："><span class="toc-text">1. 首先理解vue的render函数：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-vue-router如何安装到vue："><span class="toc-text">2. vue-router如何安装到vue：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-其他："><span class="toc-text">3. 其他：</span></a></li></ol>
+    
 </div>
     
 </div>
@@ -152,19 +152,28 @@
 </span>
     </div>
     <div class="post-content no-indent">
-        <p>总结：</p>
+        <ol>
+<li><p>总结：</p>
 <blockquote>
 <p>vue-router其实就是监听url当参数改变时，调用vue的render方法重新渲染dom树<br>我理解的vue-router更像一个轮播图，该哪棵dom树显示的时候就渲染哪棵</p>
 </blockquote>
-<h4 id="1-首先理解vue的render函数："><a href="#1-首先理解vue的render函数：" class="headerlink" title="1. 首先理解vue的render函数："></a>1. 首先理解vue的render函数：</h4><blockquote>
-<p>因为vue-router最终会调用render函数，render函数可以用来渲染vue组件，拥有一个参数(createElement)用来将组件渲染成dom元素，可以在render函数内部使用createElement创建并渲染组件，也可以直接渲染.vue文件组件；createElement通常写成h，也就是render: h =&gt; h(App)，h是hyperscript的缩写。在监听到url改变后，vue-router就会在router-view中调用render函数渲染路径对应的组件</p>
-</blockquote>
-<h4 id="2-vue-router如何安装到vue："><a href="#2-vue-router如何安装到vue：" class="headerlink" title="2. vue-router如何安装到vue："></a>2. vue-router如何安装到vue：</h4><blockquote>
-<p>vue为开发者提供了插件机制，使用.use(plugin)的方式安装插件，并会调用该插件的install方法，因此想要在vue中安装自定义插件，需要为插件定义一个install方法。vue-router作为路由插件，应该在组件渲染前得知应该渲染哪一个组件，因此，需要在install方法中对vue的实例beforeCreate生命周期混入操作，并将初始页面指向根组件，然后通过Object.defineProperty给Vue.prototype定义$router和$route属性，将它们注入到所有组件中(方便访问)，注册两个组件router-link和router-view，router-link用来改变url参数，router-view用来调用render函数渲染组件</p>
-</blockquote>
-<h4 id="3-其他："><a href="#3-其他：" class="headerlink" title="3. 其他："></a>3. 其他：</h4><blockquote>
-<p>因为render函数是vue用来渲染组件的，因此vue-router虽然叫路由，但是并没有真实的路径，因此也没办法渲染静态文件，比如html或image，想要为项目中的静态文件指定url的话，可以把文件放置在webpack的output的路径下</p>
-</blockquote>
+</li>
+<li><p>首先理解vue的render函数：</p>
+<ul>
+<li>因为vue-router最终会调用render函数，render函数可以用来渲染vue组件，拥有一个参数(createElement)用来将组件渲染成dom元素，可以在render函数内部使用createElement创建并渲染组件，也可以直接渲染.vue文件组件；createElement通常写成h，也就是render: h =&gt; h(App)，h是hyperscript的缩写。在监听到url改变后，vue-router就会在router-view中调用render函数渲染路径对应的组件</li>
+</ul>
+</li>
+<li><p>vue-router如何安装到vue：</p>
+<ul>
+<li>vue为开发者提供了插件机制，使用.use(plugin)的方式安装插件，并会调用该插件的install方法，因此想要在vue中安装自定义插件，需要为插件定义一个install方法。vue-router作为路由插件，应该在组件渲染前得知应该渲染哪一个组件，因此，需要在install方法中对vue的实例beforeCreate生命周期混入操作，并将初始页面指向根组件，然后通过Object.defineProperty给Vue.prototype定义$router和$route属性，将它们注入到所有组件中(方便访问)，注册两个组件router-link和router-view，router-link用来改变url参数，router-view用来调用render函数渲染组件</li>
+</ul>
+</li>
+<li><p>其他：</p>
+<ul>
+<li>因为render函数是vue用来渲染组件的，因此vue-router虽然叫路由，但是并没有真实的路径，因此也没办法渲染静态文件，比如html或image，想要为项目中的静态文件指定url的话，可以把文件放置在webpack的output的路径下</li>
+</ul>
+</li>
+</ol>
 
         
             <div class="donate-container">
