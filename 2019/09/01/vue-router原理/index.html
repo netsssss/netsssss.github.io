@@ -12,7 +12,7 @@
 
     <title>
         
-        css编入集 - Ns Blog
+        vue-router原理 - Ns Blog
         
     </title>
 
@@ -104,7 +104,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-盒子模型"><span class="toc-text">1. 盒子模型</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-首先理解vue的render函数："><span class="toc-text">1. 首先理解vue的render函数：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-vue-router如何挂载到vue上："><span class="toc-text">2. vue-router如何挂载到vue上：</span></a></li></ol>
 </div>
     
 </div>
@@ -134,15 +134,15 @@
 
 <div class="post-container">
     <div class="post-title">
-        css编入集
+        vue-router原理
     </div>
 
     <div class="post-meta">
-        <span class="attr">发布于：<span>2019-08-18 00:36:15</span></span>
+        <span class="attr">发布于：<span>2019-09-01 08:22:20</span></span>
         
         <span class="attr">标签：/
         
-        <a class="tag" href="/tags/#css" title="css">css</a>
+        <a class="tag" href="/tags/#vue" title="vue">vue</a>
         <span>/</span>
         
         
@@ -152,22 +152,12 @@
 </span>
     </div>
     <div class="post-content no-indent">
-        <h3 id="1-盒子模型"><a href="#1-盒子模型" class="headerlink" title="1. 盒子模型"></a>1. 盒子模型</h3><ol>
-<li>每一个元素都会带有宽高属性，即使高度为0</li>
-<li>元素默认的margin，padding，border值为0</li>
-<li><strong>margin可以设置负值</strong><ol>
-<li>当块元素没有设定宽度时，负left和right会增加左边或右边的宽度</li>
-<li>设置负top时会向上移动</li>
-<li>设置负bottom时会向上移动并减少元素的css读取高度(缩减了元素的content区域)</li>
-</ol>
-</li>
-<li><strong>box-sizing拥有两个常用属性</strong><ol>
-<li>content-box(默认): 宽度不包括border和padding</li>
-<li>border-box(IE默认): 宽度包括border和padding</li>
-</ol>
-</li>
-</ol>
-
+        <p>总结：</p>
+<blockquote>
+<p>vue-router其实就是监听url，当url改变时获取参数，调用vue的render方法重新渲染dom树<br>我理解的vue-router更像一个轮播图，页面中只有一棵dom树，该哪棵显示的时候就渲染哪棵</p>
+</blockquote>
+<h4 id="1-首先理解vue的render函数："><a href="#1-首先理解vue的render函数：" class="headerlink" title="1. 首先理解vue的render函数："></a>1. 首先理解vue的render函数：</h4><p>  因为vue-router最终会调用render函数，render函数可以用来创建或者渲染vue组件，可以在render函数内部在createElement中创建组件，也可以直接引用.vue文件生成的组件，render函数有一个必传的参数: createElement，通常写成h，也就是vue-cli中经常出现的render: h =&gt; h(App)，h是hyperscript的缩写，这个参数就是用来将组件渲染成dom元素的。在监听到url改变后，vue-router就会在router-view中调用render函数渲染路径对应的组件</p>
+<h4 id="2-vue-router如何挂载到vue上："><a href="#2-vue-router如何挂载到vue上：" class="headerlink" title="2. vue-router如何挂载到vue上："></a>2. vue-router如何挂载到vue上：</h4>
         
             <div class="donate-container">
     <div class="donate-button">
@@ -276,7 +266,7 @@
 <script src="/js/gitment.js"></script>
 <script>
     var gitment = new Gitment({
-        id: 'css编入集',
+        id: 'vue-router原理',
         owner: 'netsssss',
         repo: 'netsssss.github.io',
         oauth: {
