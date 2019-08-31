@@ -163,7 +163,7 @@
 <p>vue为开发者提供了插件机制，使用.use(plugin)的方式安装插件，并会调用该插件的install方法，因此想要在vue中安装自定义插件，需要为插件定义一个install方法。vue-router作为路由插件，应该在组件渲染前得知应该渲染哪一个组件，因此，需要在install方法中对vue的实例beforeCreate生命周期混入操作，并将初始页面指向根组件，然后通过Object.defineProperty给Vue.prototype定义$router和$route属性，将它们注入到所有组件中(方便访问)，注册两个组件router-link和router-view，router-link用来改变url参数，router-view用来调用render函数渲染组件</p>
 </blockquote>
 <h4 id="3-其他："><a href="#3-其他：" class="headerlink" title="3. 其他："></a>3. 其他：</h4><blockquote>
-<p>因为render函数是vue用来渲染组件的，因此vue-router虽然叫路由，但是并没有真实的路径，因此也没办法渲染静态文件，比如html或img，想要为项目中的静态文件指定url的话，可以把文件放置在webpack的output的路径下</p>
+<p>因为render函数是vue用来渲染组件的，因此vue-router虽然叫路由，但是并没有真实的路径，因此也没办法渲染静态文件，比如html或image，想要为项目中的静态文件指定url的话，可以把文件放置在webpack的output的路径下</p>
 </blockquote>
 
         
