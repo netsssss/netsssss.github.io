@@ -156,8 +156,10 @@
 <blockquote>
 <p>vue-router其实就是监听url，当url改变时获取参数，调用vue的render方法重新渲染dom树<br>我理解的vue-router更像一个轮播图，页面中只有一棵dom树，该哪棵显示的时候就渲染哪棵</p>
 </blockquote>
-<h4 id="1-首先理解vue的render函数："><a href="#1-首先理解vue的render函数：" class="headerlink" title="1. 首先理解vue的render函数："></a>1. 首先理解vue的render函数：</h4><p>  因为vue-router最终会调用render函数，render函数可以用来创建或者渲染vue组件，可以在render函数内部在createElement中创建组件，也可以直接引用.vue文件生成的组件，render函数有一个必传的参数: createElement，通常写成h，也就是vue-cli中经常出现的render: h =&gt; h(App)，h是hyperscript的缩写，这个参数就是用来将组件渲染成dom元素的。在监听到url改变后，vue-router就会在router-view中调用render函数渲染路径对应的组件</p>
-<h4 id="2-vue-router如何挂载到vue上："><a href="#2-vue-router如何挂载到vue上：" class="headerlink" title="2. vue-router如何挂载到vue上："></a>2. vue-router如何挂载到vue上：</h4>
+<h4 id="1-首先理解vue的render函数："><a href="#1-首先理解vue的render函数：" class="headerlink" title="1. 首先理解vue的render函数："></a>1. 首先理解vue的render函数：</h4><ul>
+<li>因为vue-router最终会调用render函数，render函数可以用来渲染vue组件，拥有一个参数(createElement)，可以在render函数内部在createElement中直接创建并渲染组件，也可以直接渲染.vue文件生成的组件；createElement通常写成h，也就是render: h =&gt; h(App)，h是hyperscript的缩写，这个参数就是用来将组件渲染成dom元素的。在监听到url改变后，vue-router就会在router-view中调用render函数渲染路径对应的组件<h4 id="2-vue-router如何挂载到vue上："><a href="#2-vue-router如何挂载到vue上：" class="headerlink" title="2. vue-router如何挂载到vue上："></a>2. vue-router如何挂载到vue上：</h4></li>
+</ul>
+
         
             <div class="donate-container">
     <div class="donate-button">
