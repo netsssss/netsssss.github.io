@@ -189,7 +189,16 @@
 <li><code>$1</code> 返回第一个括号中的内容，<code>$2</code>是第二个括号中的内容</li>
 </ul>
 </li>
+<li>使用：<ul>
+<li><code>replace()</code> 可以匹配多个数据并依次返回，replace的第二个参数可以是带有返回值的函数，因此可以使用<code>$1</code>等作为参数获取匹配到的结果进行再处理</li>
+<li><code>str.search(//)</code> 获得匹配的起始位置，如果未匹配到则返回-1，indexOf()比search()方法消耗更小</li>
+<li><code>str.match(//)</code> &amp; <code>str.matchAll(//)</code> 获得匹配的一个或多个数据的数组</li>
+<li><code>//.test(str)</code> 检测字符串中是否有匹配的值</li>
+<li><code>//.exec(str)</code> 获得匹配的一个或多个数据的数组，如果未匹配到则返回null</li>
+</ul>
+</li>
 <li>其他：<ul>
+<li>js对断言的支持并不友好，反向断言更是在es2019才加入es规范中</li>
 <li>正则表达式只能用来匹配字符串，如果传入对象或数组，则会匹配toString()后的结果</li>
 <li>在不同的语言中，正则表达式的写法相同，但使用方法不同<blockquote>
 <p>比如在shell脚本中，如果希望使用正则表达式批量重命名一些文件，可以使用 <code>$ rename &#39;s/\.png/\.jpg/&#39; *.png</code></p>
