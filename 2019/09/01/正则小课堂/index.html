@@ -187,6 +187,9 @@
 <li><code>/(?&lt;!abc)/</code> 匹配非<code>!</code>后面字符之前的位置</li>
 <li><code>/(.)/1/</code> 再次匹配第一个括号里匹配到的数据，<code>/2</code>就表示再次匹配第二个括号里匹配到的数据，不能匹配断言位置的括号</li>
 <li><code>$1</code> 返回第一个括号中的内容，<code>$2</code>是第二个括号中的内容</li>
+<li><code>/(?&lt;name&gt;abc)/</code> 捕获命名组，用来代替<code>$1</code>，<code>$2</code>，可以使用<code>/\k&lt;name&gt;/</code>在稍后的正则表达式中调用捕获命名组</li>
+<li><code>/./s</code> dotAll标志，原本的<code>/./</code>不能匹配换行符，使用dotAll标志后即可使<code>/./</code>完全匹配所有字符包括换行符</li>
+<li><code>//u</code> Unicode属性转义，在正则表达式中提供对完整Unicode的支持，例如<code>㉛</code>应解释为数字31，但并不能使用<code>/\d/</code>进行匹配，现在可以使用<code>/\p{Number}/</code>，<code>/\p/</code>表示Unicode字符类，表示否定可以使用<code>/\P/</code>，例如<code>/\P{Number}/</code></li>
 </ul>
 </li>
 <li>使用：<ul>
@@ -198,7 +201,7 @@
 </ul>
 </li>
 <li>其他：<ul>
-<li>js对断言的支持并不友好，反向断言更是在es2019才加入es规范中</li>
+<li>js对正则的部分支持在es2018才加入到es规范中，包括反向断言，捕获命名组，dotAll，</li>
 <li>正则表达式只能用来匹配字符串，如果传入对象或数组，则会匹配toString()后的结果</li>
 <li>在不同的语言中，正则表达式的写法相同，但使用方法不同<blockquote>
 <p>比如在shell脚本中，如果希望使用正则表达式批量重命名一些文件，可以使用 <code>$ rename &#39;s/\.png/\.jpg/&#39; *.png</code></p>
