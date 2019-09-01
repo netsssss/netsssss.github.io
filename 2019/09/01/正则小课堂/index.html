@@ -160,7 +160,33 @@
     <div class="post-content no-indent">
         <ol>
 <li>基本符号：<ul>
-<li><code>/hello/</code> 精准匹配</li>
+<li><code>/abc/</code> 精准匹配</li>
+<li><code>/./</code> 匹配任意一个字符</li>
+<li><code>/{m,n}/</code> 匹配前一个字符最少m，最多n次</li>
+<li><code>/*/</code> 匹配前一个字符最少0次，最多无限次，同<code>/{0,}/</code></li>
+<li><code>/+/</code> 匹配前一个字符最少1次，最多无限次，同<code>/{1,}/</code></li>
+<li><code>/?/</code> 匹配前一个字符最少0次，最多1次，同<code>/{0,1}/</code></li>
+<li><code>/(abc)/</code> 匹配一组数据，可以与<code>/{}/</code>连用，匹配这组数据特定次数</li>
+<li><code>/^/</code> 匹配字符串的开头</li>
+<li><code>/$/</code> 匹配字符串的结尾</li>
+<li><code>/abc|def/</code> 匹配管道符两侧从左到右任意一组字符，管道符为惰性匹配，左侧如果匹配成功则不会再像右侧尝试</li>
+<li><code>/[abc]/</code> 匹配中括号内任意一个字符</li>
+<li><code>/[1-6]/</code> 匹配从连接线左边字符到右边字符范围内的所有字符，通常有<code>1-6a-zA-Z</code></li>
+<li><code>/[^abc]/</code> 匹配括号内除了<code>^</code>之后的字符之外的字符</li>
+<li><code>/\d/</code> 匹配数字，同<code>/[0-9]/</code>，d是digit的首字母</li>
+<li><code>/\D/</code> 匹配非数字，同<code>/[^0-9]/</code></li>
+<li><code>/\w/</code> 匹配数字，大小写字母和下划线，也称单词字符，同<code>/[0-9a-zA-Z_]/</code>，w是word的首字母</li>
+<li><code>/\W/</code> 匹配非单词字符，同<code>/[^0-9a-zA-Z_]/</code></li>
+<li><code>/\s/</code> 匹配所有看不见的空白字符，同<code>/[ \t\v\n\r\f]/</code>，包括空白符，水平制表符，垂直制表符，换行符，回车符，换页符，s是space character的首字母</li>
+<li><code>/\S/</code> 匹配非空白字符，同<code>/[^ \t\v\n\r\f]]/</code></li>
+<li><code>/\b/</code> 匹配一个位置，某一边是<code>/w</code>，另一边是<code>/W</code>，称为单词边界，b是boundary的首字母</li>
+<li><code>/\B/</code> 匹配非单词边界</li>
+<li><code>/(?=abc)/</code> 匹配<code>=</code>后面字符之前的位置，称为断言位置</li>
+<li><code>/(?!abc)/</code> 匹配非<code>!</code>后面字符之前的位置，要匹配非首字符可以使用<code>/(?!^)/</code></li>
+<li><code>/(?&lt;=abc)/</code> 匹配<code>=</code>后面字符之前的位置，称为反向断言位置</li>
+<li><code>/(?&lt;!abc)/</code> 匹配非<code>!</code>后面字符之前的位置</li>
+<li><code>/(.)/1/</code> 再次匹配第一个括号里匹配到的数据，<code>/2</code>就表示再次匹配第二个括号里匹配到的数据，不能匹配断言位置的括号</li>
+<li><code>$1</code> 返回第一个括号中的内容，<code>$2</code>是第二个括号中的内容</li>
 </ul>
 </li>
 <li>其他：<ul>
